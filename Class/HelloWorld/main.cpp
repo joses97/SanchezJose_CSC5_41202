@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     //Output the results
     cout<<"Hello World"<<endl;
     
-    //Exit stage right
+    //Exit stage right and close
     return 0;
 }
 
