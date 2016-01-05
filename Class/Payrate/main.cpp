@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Check out IDE
- * Created on January 4, 2016, 10:18 AM
+ * Purpose: Calculate Payrate
+ * Created on January 5, 2016, 9:00 AM
  */
 
 //System Libraries
