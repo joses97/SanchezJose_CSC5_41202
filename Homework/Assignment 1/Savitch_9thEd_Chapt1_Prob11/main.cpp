@@ -24,13 +24,13 @@ int main(int argc, char** argv) {
      //Output
     
     cout<<"  "<<letter<<letter<<letter<<endl;
-    cout<<" "<<letter<<"   "<<letter<<endl;
+    cout<<" "<<letter<<"  "<<letter<<endl;
     cout<<letter<<endl;
     cout<<letter<<endl;
     cout<<letter<<endl;
     cout<<letter<<endl;
     cout<<letter<<endl;
-    cout<<" "<<letter<<"   "<<letter<<endl;
+    cout<<" "<<letter<<"  "<<letter<<endl;
     cout<<"  "<<letter<<letter<<letter<<endl;
     
     //Exit stage right
