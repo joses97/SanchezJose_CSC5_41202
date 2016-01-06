@@ -14,15 +14,15 @@ int main(int argc, char** argv) {
     cout<<"Enter number of Quarters"<<endl;
     cin>>Qtr;
     int penQ = 25 * Qtr;  //penQ = Pennies worth of Quarters
-    cout<<penQ<<endl;
+    cout<<penQ<<" pennies"<<endl;
     cout<<"Enter number of Dimes"<<endl;
     cin>>Dms;            
     int penD = 10 * Dms;  //penD = pennies worth of dimes
-    cout<<penD<<endl;
+    cout<<penD<<" pennies"<<endl;
     cout<<"Enter number of Nickels"<<endl;
     cin>>Nkl;
     int penN = 5 * Nkl;   //penN = pennies worth of nickels
-    cout<<penN<<endl;
+    cout<<penN<<" pennies"<<endl;
     int penF = penQ + penD + penN;    //penF represents final number of pennies
     cout<<"Total number of pennies are ";
     cout<<penF;
