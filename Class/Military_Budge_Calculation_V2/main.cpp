@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     float fedBdgt=3.8e12f;//Federal Budget of 3.8 Trillion Dollars
     
     //Calculate the percentage for the military budget
-    float percMil=milBdgt/fedBdgt*100;
+    float percMil=milBdgt/fedBdgt*cnvPerc;
     
     //Output the results
     cout<<"The Military budget = $"<<milBdgt<<endl;
