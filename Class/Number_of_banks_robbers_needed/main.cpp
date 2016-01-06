@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     unsigned char nPerps;   //number of perpetrators
     
     //input the number of coins
-    cout<<"How much money would you like o aquire"<<endl;
+    cout<<"How much money would you like to aquire"<<endl;
     cin>>amtStl;
     cout<<"What is the bill denomination "<<endl;
     cin>>denom;
