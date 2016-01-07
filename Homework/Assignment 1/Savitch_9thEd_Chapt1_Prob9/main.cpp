@@ -36,9 +36,9 @@ int main(int argc, char** argv) {
     total=nQrtrs*cnvQrtr+nDimes*cnvDime+nNckls*cnvNikl;
     
     //Output the results
-    cout<<"Number of Quarters input = "<<nQrtrs<<endl;
-    cout<<"Number of Dimes input = "<<nDimes<<endl;
-    cout<<"Number of Quarters input = "<<nNckls<<endl;
+    cout<<"Number of Quarters = "<<nQrtrs<<endl;
+    cout<<"Number of Dimes    = "<<nDimes<<endl;
+    cout<<"Number of Quarters = "<<nNckls<<endl;
     cout<<"You have a total of "<<total<<" cents "<<endl;
     //Exit stage right
     return 0;
