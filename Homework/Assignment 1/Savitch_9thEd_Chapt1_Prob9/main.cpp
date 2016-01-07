@@ -1,35 +1,45 @@
 /* 
- * File:   main.cpp
  * Author: Jose Sanchez
- * Savitch 9thEd chapter 1 problem 9
- * Created on January 5, 2016, 6:08 PM
+ * Created on January 6, 2016, 8:18
+ * Purpose:  Calculate Cents
  */
 
-/*
- * Purpose: To calculate worth of coins in cent value
- */
+//System Libraries
 #include <iostream>
-
 using namespace std;
+
+//User Libraries
+
+//Global Constant
+const char cnvQrtr=25;//Cents per quarter
+const char cnvDime=10;//cents per dime
+const char cnvNikl=5;//cents per nickel
+const char cnvPnD1=100;//cents per dollar
+
+//Function Prototypes
+
+//Execution Begins Here
 int main(int argc, char** argv) {
-    cout<<"Penny Calculator, Calculates penny value of Coins"<<endl;
-    int Qtr, Dms, Nkl;                                 //Quarters dimes nickels.
-    cout<<"Press enter after entering numbers"<<endl;
-    cout<<"Enter number of Quarters"<<endl;
-    cin>>Qtr;
-    int penQ = 25 * Qtr;                     //penQ = Pennies worth of Quarters
-    cout<<penQ<<" pennies worth of Quarters"<<endl;
-    cout<<"Enter number of Dimes"<<endl;
-    cin>>Dms;            
-    int penD = 10 * Dms;                         //penD = pennies worth of dimes
-    cout<<penD<<" pennies worth  of dimes"<<endl;
-    cout<<"Enter number of Nickels"<<endl;
-    cin>>Nkl;
-    int penN = 5 * Nkl;                       //penN = pennies worth of nickels
-    cout<<penN<<" pennies worth of nickels"<<endl;
-    int penF = penQ + penD + penN;     //penF represents final number of pennies
-    cout<<"Total number of pennies are ";
-    cout<<penF;
+    //Declare and initialize variables
+    unsigned short nQrtrs, nNckls, nDimes;//Declare inputs, number of Q, D, N
+    unsigned short total;//total
+    
+    //input the number of coins
+    cout<<"How many quarters do you have 0-9"<<endl;
+    cin>>nQrtrs;
+    cout<<"How many dimes do you have 0-9"<<endl;
+    cin>>nDimes;
+    cout<<"How many Nickels do you have 0-9"<<endl;
+    cin>>nNckls;
+    
+    //calculate the total
+    total=nQrtrs*cnvQrtr+nDimes*cnvDime+nNckls*cnvNikl;
+    
+    //Output the results
+    cout<<"Number of Quarters input = "<<nQrtrs<<endl;
+    cout<<"Number of Dimes input = "<<nDimes<<endl;
+    cout<<"Number of Quarters input = "<<nNckls<<endl;
+    cout<<"You have a total of "<<total<<" cents "<<endl;
+    //Exit stage right
     return 0;
 }
-

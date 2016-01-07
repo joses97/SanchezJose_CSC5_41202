@@ -23,6 +23,7 @@ int main(int argc, char** argv) {
     //Declare and initialize variables
     unsigned short nQrtrs, nNckls, nDimes;//Declare inputs, number of Q, D, N
     unsigned short total;//total
+    
     //input the number of coins
     cout<<"How many quarters do you have 0-9"<<endl;
     cin>>nQrtrs;
