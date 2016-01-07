@@ -5,26 +5,33 @@
  * Created on January 5, 2016, 8:55 PM
  */
 
-/*
- * Purpose:
- */
+//System Libraries
 #include <iostream>
-
 using namespace std;
 
+//User Libraries
+
+//Global Constants
+unsigned char accl=32; //Acceleration rate is constant at 32
+
+//Function Prototypes
+
+//Execution Begins here
 int main(int argc, char** argv) {
-    int scnds;
+    //Declare and Initialize variables
+    unsigned short scnds, dstnc;
+    
+    //Input the number of seconds
     cout<<"Free-fall Calculator"<<endl;
     cout<<"Please enter seconds elapsed, then press enter."<<endl;
     cin>>scnds;
-    int scnds2 = scnds + 0;
-    int scnds3 = scnds2 * scnds;
-    int accl = 32 * scnds3;
-    int dstnc = accl / 2;
+    
+    //Calculation of Distance
+    dstnc=scnds*scnds*accl/2;
+    
+    //Output  total distance
     cout<<"The object would fall a total of "<<dstnc<<" feet";
-    cout<<" in "<<scnds<<endl;
-    
-    
+    cout<<" in "<<scnds<<" seconds"<<endl;
     return 0;
 }
 
