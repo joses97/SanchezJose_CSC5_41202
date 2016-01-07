@@ -11,8 +11,8 @@ using namespace std;
 //User Libraries
 
 //Global Constant
-const char  wtBill=1;//Cents per quarter
-const float cnvLbs=1.0f/453.5f;//cents per dime
+const char  WTBILL=1;//Cents per quarter
+const float CNVLBS=1.0f/453.5f;//cents per dime
 
 
 //Function Prototypes
@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
    
     
     //calculate the total
-    nPerps=cnvLbs*amtStl*wtBill/denom/wtPers+1;
+    nPerps=CNVLBS*amtStl*WTBILL/denom/wtPers+1;
     
     //Output the results
     cout<<"Amount Desire = "<<amtStl<<endl;

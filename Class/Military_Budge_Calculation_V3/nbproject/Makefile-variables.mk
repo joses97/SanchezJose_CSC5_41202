@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=number_of_banks_robbers_needed
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/number_of_banks_robbers_needed
+CND_ARTIFACT_NAME_Debug=military_budge_calculation_v3
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/military_budge_calculation_v3
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=numberofbanksrobbersneeded.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/numberofbanksrobbersneeded.tar
+CND_PACKAGE_NAME_Debug=militarybudgecalculationv3.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/militarybudgecalculationv3.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=number_of_banks_robbers_needed
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/number_of_banks_robbers_needed
+CND_ARTIFACT_NAME_Release=military_budge_calculation_v3
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/military_budge_calculation_v3
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=numberofbanksrobbersneeded.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/numberofbanksrobbersneeded.tar
+CND_PACKAGE_NAME_Release=militarybudgecalculationv3.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/militarybudgecalculationv3.tar
 #
 # include compiler specific variables
 #
