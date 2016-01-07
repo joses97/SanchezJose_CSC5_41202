@@ -2,6 +2,7 @@
  * Author: Jose Sanchez
  * Created on January 6, 2016, 8:18
  * Purpose:  Calculate Cents
+ * Problem 3 Programming Project
  */
 
 //System Libraries
@@ -40,6 +41,7 @@ int main(int argc, char** argv) {
     cout<<"Number of Dimes    = "<<nDimes<<endl;
     cout<<"Number of nNckls= "<<nNckls<<endl;
     cout<<"You have a total of "<<total<<" cents "<<endl;
+    
     //Exit stage right
     return 0;
 }

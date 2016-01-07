@@ -32,6 +32,8 @@ int main(int argc, char** argv) {
     //Output  total distance
     cout<<"The object would fall a total of "<<dstnc<<" feet";
     cout<<" in "<<scnds<<" seconds"<<endl;
+    
+    //Exit stage right
     return 0;
 }
 

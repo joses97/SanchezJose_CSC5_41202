@@ -8,7 +8,7 @@
 /*
  * Question one asked to copy the code from example 1.8 directly
  *  that is why int variables are longer than 7 characters. 
- *  This is also why \n is used instead of endl;
+ *  This is also why \n is used instead of endl; Also no comments.
  */
 #include <iostream>
 

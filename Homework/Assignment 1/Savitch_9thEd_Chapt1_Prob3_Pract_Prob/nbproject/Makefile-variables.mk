@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=savitch_9thed_chapt1_prob3
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/savitch_9thed_chapt1_prob3
+CND_ARTIFACT_NAME_Debug=savitch_9thed_chapt1_prob3_pract_prob
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/savitch_9thed_chapt1_prob3_pract_prob
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=savitch9thedchapt1prob3.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/savitch9thedchapt1prob3.tar
+CND_PACKAGE_NAME_Debug=savitch9thedchapt1prob3practprob.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/savitch9thedchapt1prob3practprob.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=savitch_9thed_chapt1_prob3
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/savitch_9thed_chapt1_prob3
+CND_ARTIFACT_NAME_Release=savitch_9thed_chapt1_prob3_pract_prob
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/savitch_9thed_chapt1_prob3_pract_prob
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=savitch9thedchapt1prob3.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/savitch9thedchapt1prob3.tar
+CND_PACKAGE_NAME_Release=savitch9thedchapt1prob3practprob.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/savitch9thedchapt1prob3practprob.tar
 #
 # include compiler specific variables
 #

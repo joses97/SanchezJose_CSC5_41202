@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Savitch chapter 1 problem 7 
+ * Savitch chapter 1 Problem 1 Programming Projects
  * Created on January 5, 2016, 5:37 PM
  */
 //System Libraries
