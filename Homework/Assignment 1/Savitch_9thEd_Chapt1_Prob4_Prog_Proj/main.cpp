@@ -12,7 +12,7 @@ using namespace std;
 //User Libraries
 
 //Global Constants
-unsigned char accl=32; //Acceleration rate is constant at 32
+unsigned char ACCL=32; //Acceleration rate is constant at 32
 
 //Function Prototypes
 
@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     cin>>scnds;
     
     //Calculation of Distance
-    dstnc=scnds*scnds*accl/2;
+    dstnc=scnds*scnds*ACCL/2;
     
     //Output  total distance
     cout<<"The object would fall a total of "<<dstnc<<" feet";
