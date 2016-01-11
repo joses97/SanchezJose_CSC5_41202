@@ -12,10 +12,9 @@ using namespace std;
 //User Libraries
 
 //Global Constant
-const char cnvQrtr=25;//Cents per quarter
-const char cnvDime=10;//cents per dime
-const char cnvNikl=5;//cents per nickel
-const char cnvPnD1=100;//cents per dollar
+const char CNVQRTR=25;//Cents per quarter
+const char CNVDIME=10;//cents per dime
+const char CNVNIKL=5;//cents per nickel
 
 //Function Prototypes
 
@@ -34,7 +33,7 @@ int main(int argc, char** argv) {
     cin>>nNckls;
     
     //calculate the total
-    total=nQrtrs*cnvQrtr+nDimes*cnvDime+nNckls*cnvNikl;
+    total=nQrtrs*CNVQRTR+nDimes*CNVDIME+nNckls*CNVNIKL;
     
     //Output the results
     cout<<"Number of Quarters = "<<nQrtrs<<endl;
