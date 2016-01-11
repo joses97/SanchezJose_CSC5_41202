@@ -3,7 +3,7 @@
  * Author: Jose
  * Savitch 9thEd Chapter 1 Problem 2 Practice Programs
  * Created on January 5, 2016, 7:24 PM
- * Purpose: Add hello and goodbye to code from question 1
+ * Purpose: Add hello and goodbye to code from question 1 Practice Program
  */
  
 /*

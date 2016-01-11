@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose
- * Savitch 9thEd Chapter 1 Practice Programs Problem 1
+ * Savitch 9thEd Chapter 1 Practice Programs Program 1
  * Created on January 5, 2016, 7:07 PM
  * Purpose: to test a code given from the text book, finding total peas
  */

@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose
- * Savitch 9thEd Chapter 1 Practice Problem 5
+ * Savitch 9thEd Chapter 1 Practice Program 5
  * Created on January 5, 2016, 7:40 PM
  * Purpose: Find total length of fence needed
  */

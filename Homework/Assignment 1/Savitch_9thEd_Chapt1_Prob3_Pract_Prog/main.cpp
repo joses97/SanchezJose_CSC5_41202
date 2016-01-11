@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose
- * Savitch 9thEd Chapter 1 Practice Problem 3
+ * Savitch 9thEd Chapter 1 Practice Program 3
  * Created on January 5, 2016, 7:27 PM
  * Purpose: To observed what happened when dividing by zero
  */

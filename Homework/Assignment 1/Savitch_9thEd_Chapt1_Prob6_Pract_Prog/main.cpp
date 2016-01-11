@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose
- * Savitch 9thEd Chapter 1 Practice Problem 6
+ * Savitch 9thEd Chapter 1 Practice Program 6
  * Purpose: To cause errors and document them using comments
  * Created on January 5, 2016, 7:40 PM
  */
