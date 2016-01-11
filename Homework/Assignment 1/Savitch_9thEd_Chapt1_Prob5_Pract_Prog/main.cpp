@@ -3,6 +3,7 @@
  * Author: Jose
  * Savitch 9thEd Chapter 1 Practice Problem 5
  * Created on January 5, 2016, 7:40 PM
+ * Purpose: Find total length of fence needed
  */
  
 //System Libraries
@@ -23,10 +24,11 @@ int main() {
     
     //Input Width and Height of area rectangular area
     cout<<"Hello"<<endl;
+    cout<<"This is to calculate the total length of the fence needed"<<endl;
     cout<< "Press enter after entering a number"<<endl;
-    cout<< "Enter the length of the width in feet"<<endl;
+    cout<< "Enter the width in feet of the space"<<endl;
     cin>>wdth;
-    cout<<"Now enter the height in feet"<<endl;
+    cout<<"Now enter the height in feet of the space"<<endl;
     cin>>hght;
     
     //Calculate total length of fence needed

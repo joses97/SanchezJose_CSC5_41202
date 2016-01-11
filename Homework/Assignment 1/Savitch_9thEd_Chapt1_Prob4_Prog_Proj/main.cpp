@@ -3,6 +3,7 @@
  * Author: Jose
  * Savitch Chapter 1 Programming project problem 4
  * Created on January 5, 2016, 8:55 PM
+ * Purpose: To find the distance an object falls over a specific time
  */
 
 //System Libraries
@@ -23,7 +24,7 @@ int main(int argc, char** argv) {
     
     //Input the number of seconds
     cout<<"Free-fall Calculator"<<endl;
-    cout<<"Please enter seconds elapsed, then press enter."<<endl;
+    cout<<"Enter seconds elapsed in whole numbers, then press enter."<<endl;
     cin>>scnds;
     
     //Calculation of Distance

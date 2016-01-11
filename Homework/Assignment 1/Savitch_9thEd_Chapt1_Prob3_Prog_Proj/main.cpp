@@ -2,7 +2,7 @@
  * Author: Jose Sanchez
  * Created on January 6, 2016, 8:18
  * Purpose:  Calculate Cents
- * Problem 3 Programming Project
+ * Savitch 9thEd Chapter 1 Problem 3 Programming Project
  */
 
 //System Libraries
@@ -25,6 +25,7 @@ int main(int argc, char** argv) {
     unsigned short total;//total
     
     //input the number of coins
+    cout<<"Please enter your response, then press enter."<<endl;
     cout<<"How many quarters do you have "<<endl;
     cin>>nQrtrs;
     cout<<"How many dimes do you have "<<endl;

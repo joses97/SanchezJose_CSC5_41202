@@ -3,6 +3,7 @@
  * Author: Jose
  * Savitch 9thEd Chapter 1 Practice Problem 4
  * Created on January 5, 2016, 7:32 PM
+ * Purpose: change multiplication to addition to see logic error
  */
  
 /*
