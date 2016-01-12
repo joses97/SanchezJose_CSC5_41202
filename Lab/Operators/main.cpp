@@ -53,7 +53,7 @@ int main() {
         if(score<60)
         cout<<"F"<<endl;
         
-        cout<<"Your switch score is = "
+        cout<<"Your switch score is = "<<endl;
         
 	return 0;
 }
