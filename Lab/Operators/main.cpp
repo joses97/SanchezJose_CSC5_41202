@@ -23,9 +23,11 @@ int main() {
 	//Calculation of Jackpot
 
 	//Output
-         cout<<"Your Ternary Operator = "<<endl;
-         (score>=90?"F":"A");
-         cout<<"thanks"<<endl;
+         cout<<"Your Ternary Operator = "<<
+         (score>=90?"A":
+         (score>=80?"B":
+         (score>=70?"c":
+         (score>=60?"D":"F"))))<<endl;
          
          
         
