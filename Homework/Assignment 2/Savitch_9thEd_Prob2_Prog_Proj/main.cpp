@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Jose Sanchez
  * Purpose: 
- * Created on January 4, 2016, 10:18 AM
+ * Created on January 12, 2016
  */
 
 //System Libraries
