@@ -7,7 +7,7 @@
 
 //System Libraries
 #include <iostream>
-#include <string>
+#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -19,9 +19,11 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables 
-    float hrsWrkd, dpnds, ssTax, fedTax, stTax, unn, ins, grspay, netpay;
-    float rate=16.78, rate2=rate*1.5;
+    unsigned const short unn=10, ins=35;
+    float hrsWrkd, dpnds, ssTax, fedTax, stTax, grspay, netpay;
+    float rate=16.78;
     string ans;
+    cout<<fixed<<setprecision(0)<<endl;
     //Input data
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;
@@ -35,8 +37,8 @@ int main(int argc, char** argv) {
             ssTax=hrsWrkd*rate*0.06;
             fedTax=hrsWrkd*rate*0.14;
             stTax=hrsWrkd*rate*0.05;
-            unn=10;
     //Output Taxes
+            cout<<fixed<<setprecision(1)<<showpoint;
             cout<<"You worked "<<hrsWrkd<<" hours this week"<<endl;
             cout<<"Your Gross pay for the week is "<<grspay<<" Dollars"<<endl;
             cout<<"Social security take "<<ssTax<<" Dollars"<<endl;
@@ -45,7 +47,6 @@ int main(int argc, char** argv) {
             cout<<"The union takes "<<unn<<" Dollars"<<endl;
     //Dependent test
         if (dpnds>=3){
-                ins=35;
                 netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
                 cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
@@ -56,12 +57,11 @@ int main(int argc, char** argv) {
             } }
     //Overtime Calculation
         else if (hrsWrkd>40){
-            grspay=hrsWrkd*rate2;
+            grspay=(40*rate)+((hrsWrkd-40)*1.5);
             netpay=grspay-(ssTax+fedTax+stTax+unn);
-            ssTax=hrsWrkd*rate*0.06;
-            fedTax=hrsWrkd*rate*0.14;
-            stTax=hrsWrkd*rate*0.05;
-            unn=10;
+            ssTax=grspay*0.06;
+            fedTax=grspay*0.14;
+            stTax=grspay*0.05;
     //Output Taxes
             cout<<"You worked "<<hrsWrkd<<" hours this week"<<endl;
             cout<<"Your Gross pay for the week is "<<grspay<<" Dollars"<<endl;
@@ -71,7 +71,6 @@ int main(int argc, char** argv) {
             cout<<"The union takes "<<unn<<" Dollars"<<endl;
     //Dependent test
         if (dpnds>=3){
-                ins=35;
                 netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
                 cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;

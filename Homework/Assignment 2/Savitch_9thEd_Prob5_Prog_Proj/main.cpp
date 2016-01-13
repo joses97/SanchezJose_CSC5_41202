@@ -7,7 +7,6 @@
 
 //System Libraries
 #include <iostream>
-#include <string>
 using namespace std;
 
 //User Libraries
@@ -19,8 +18,7 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables 
-    int cap, ppl, diff, diff2;
-    string ans;
+    unsigned short cap, ppl, diff, diff2;
     //Input data
         cout<<"What is the capacity of the room?"<<endl;
         cin>>cap;
