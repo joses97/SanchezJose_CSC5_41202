@@ -28,7 +28,7 @@ int main(int argc, char** argv) {
     //Calculate or map inputs to outputs
     retro=0.5*salary*0.076f;
     retroT=retro+salary;
-    retroM=(retro/6)+(salary/12);
+    retroM=(salary/12)+(retro/6);
     //Output the results
     cout<<"You are owed an extra "<<retro<<" Dollars for the 6 month period"<<endl;
     cout<<"Your new annual salary is "<<retroT<<" Dollars"<<endl;
