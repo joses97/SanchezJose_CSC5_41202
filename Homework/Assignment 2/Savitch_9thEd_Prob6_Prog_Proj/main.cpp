@@ -23,7 +23,6 @@ int main(int argc, char** argv) {
     float rate=16.78, rate2=rate*1.5;
     string ans;
     //Input data
-    do {
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;
         cout<<"Now enter the number of dependents"<<endl;
@@ -45,13 +44,13 @@ int main(int argc, char** argv) {
             cout<<"State income tax is "<<stTax<<" Dollars"<<endl;
             cout<<"The union takes "<<unn<<" Dollars"<<endl;
     //Dependent test
-            if (dpnds>=3){
+        if (dpnds>=3){
                 ins=35;
                 netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
                 cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
-            else if (dpnds<3){
+        else if (dpnds<3){
                 netpay=grspay-(ssTax+fedTax+stTax+unn);
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             } }
@@ -71,23 +70,17 @@ int main(int argc, char** argv) {
             cout<<"State income tax is "<<stTax<<" Dollars"<<endl;
             cout<<"The union takes "<<unn<<" Dollars"<<endl;
     //Dependent test
-            if (dpnds>=3){
+        if (dpnds>=3){
                 ins=35;
                 netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
                 cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
-            else if (dpnds<3){
+        else if (dpnds<3){
                 netpay=grspay-(ssTax+fedTax+stTax+unn);
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
         }
-            
-    cout<<"Repeat? Yes or No"<<endl;
-    cin>>ans;
-    }
-    while (ans=="Yes"||ans=="yes");
-    cout<<"Goodbye"<<endl;
     //Exit stage right and close
     return 0;
 }

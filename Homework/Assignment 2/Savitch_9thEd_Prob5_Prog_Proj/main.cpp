@@ -22,7 +22,6 @@ int main(int argc, char** argv) {
     int cap, ppl, diff, diff2;
     string ans;
     //Input data
-    do {
         cout<<"What is the capacity of the room?"<<endl;
         cin>>cap;
         cout<<"How many  people are in the room?"<<endl;
@@ -32,24 +31,17 @@ int main(int argc, char** argv) {
         diff2=ppl-cap;
         
     //If statements to determine capacity
-        if (ppl<=cap) 
-        {
+    if (ppl<=cap) {
             cout<<"There are "<<ppl<<" in the room with a capacity "
                     "of "<<cap<<endl;
             cout<<"You have met the legal standards and can "
                     "fit "<<diff<<" more people"<<endl;
-        }
-        else if (ppl>cap)
-        {
+    }else if (ppl>cap){
             cout<<"The meeting cannot be held because the room is over "
                     "capacity by "<<diff2<<" people"<<endl;
-        }
-        cout<<"Repeat? Yes or No"<<endl;
-       
-        cin>>ans;
     }
-    while (ans=="Yes"||ans=="yes");
-    cout<<"Goodbye"<<endl;
+
+
     //Exit stage right and close
     return 0;
 }
