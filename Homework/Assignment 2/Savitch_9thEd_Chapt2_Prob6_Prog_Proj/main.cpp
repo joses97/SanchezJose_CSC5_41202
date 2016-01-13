@@ -22,8 +22,6 @@ int main(int argc, char** argv) {
     unsigned const short unn=10, ins=35;
     float hrsWrkd, dpnds, ssTax, fedTax, stTax, grspay, netpay;
     float rate=16.78;
-    string ans;
-    cout<<fixed<<setprecision(0)<<endl;
     //Input data
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;
@@ -57,7 +55,7 @@ int main(int argc, char** argv) {
             } }
     //Overtime Calculation
         else if (hrsWrkd>40){
-            grspay=(40*rate)+((hrsWrkd-40)*1.5);
+            grspay=(671.2+((hrsWrkd-40)*1.5*rate));
             netpay=grspay-(ssTax+fedTax+stTax+unn);
             ssTax=grspay*0.06;
             fedTax=grspay*0.14;
@@ -68,7 +66,7 @@ int main(int argc, char** argv) {
             cout<<"Social security take "<<ssTax<<" Dollars"<<endl;
             cout<<"Federal income tax is "<<fedTax<<" Dollars"<<endl;
             cout<<"State income tax is "<<stTax<<" Dollars"<<endl;
-            cout<<"The union takes "<<unn<<" Dollars"<<endl;
+            cout<<"The union takes "<<unn<<" Dollars"<<endl;}
     //Dependent test
         if (dpnds>=3){
                 netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
@@ -79,7 +77,7 @@ int main(int argc, char** argv) {
                 netpay=grspay-(ssTax+fedTax+stTax+unn);
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
-        }
+        
     //Exit stage right and close
     return 0;
 }

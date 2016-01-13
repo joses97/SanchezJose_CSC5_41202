@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=savitch_9thed_prob5_prog_proj
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/savitch_9thed_prob5_prog_proj
+CND_ARTIFACT_NAME_Debug=savitch_9thed_chapt2_prob5_prog_proj
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/savitch_9thed_chapt2_prob5_prog_proj
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=savitch9thedprob5progproj.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/savitch9thedprob5progproj.tar
+CND_PACKAGE_NAME_Debug=savitch9thedchapt2prob5progproj.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/savitch9thedchapt2prob5progproj.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=savitch_9thed_prob5_prog_proj
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/savitch_9thed_prob5_prog_proj
+CND_ARTIFACT_NAME_Release=savitch_9thed_chapt2_prob5_prog_proj
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/savitch_9thed_chapt2_prob5_prog_proj
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=savitch9thedprob5progproj.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/savitch9thedprob5progproj.tar
+CND_PACKAGE_NAME_Release=savitch9thedchapt2prob5progproj.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/savitch9thedchapt2prob5progproj.tar
 #
 # include compiler specific variables
 #

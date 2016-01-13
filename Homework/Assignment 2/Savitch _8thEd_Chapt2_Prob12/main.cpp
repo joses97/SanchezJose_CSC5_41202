@@ -8,7 +8,6 @@
 //System Libraries
 #include <iostream>
 #include <cmath>
-#include <iomanip>
 using namespace std;
 
 //User Libraries
@@ -52,30 +51,6 @@ int main(int argc, char** argv) {
     //Output the results
     cout<<"The third pass r = "<<r<<endl;
     cout<<"The third pass guess  = "<<guess<<endl;
-    
-    //approx square root
-    r=n/guess;
-    guess=(guess+r)/2;
-    
-    //Output the results
-    cout<<"The fourth pass r = "<<r<<endl;
-    cout<<"The fourth pass guess  = "<<guess<<endl;
-    
-    //approx square root
-    r=n/guess;
-    guess=(guess+r)/2;
-    
-    //Output the results
-    cout<<"The fifth pass r = "<<r<<endl;
-    cout<<"The fifth pass guess  = "<<guess<<endl;    
-    
-    //approx square root
-    r=n/guess;
-    guess=(guess+r)/2;
-    
-    //Output the results
-    cout<<"The sixth pass r = "<<r<<endl;
-    cout<<"The sixth pass guess  = "<<guess<<endl;
     
     //Exit stage right and close
     return 0;
