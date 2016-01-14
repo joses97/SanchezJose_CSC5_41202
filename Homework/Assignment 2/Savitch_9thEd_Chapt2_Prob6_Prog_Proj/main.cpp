@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
     //Declare and initialize variables 
     unsigned const short unn=10, ins=35;
     float hrsWrkd, dpnds, ssTax, fedTax, stTax, grspay, netpay;
-    float rate=16.78;
+    float rate=16.87f;
     //Input data
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;
@@ -43,16 +43,7 @@ int main(int argc, char** argv) {
             cout<<"Federal income tax is "<<fedTax<<" Dollars"<<endl;
             cout<<"State income tax is "<<stTax<<" Dollars"<<endl;
             cout<<"The union takes "<<unn<<" Dollars"<<endl;
-    //Dependent test
-        if (dpnds>=3){
-                netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
-                cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
-                cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
-            }
-        else if (dpnds<3){
-                netpay=grspay-(ssTax+fedTax+stTax+unn);
-                cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
-            } }
+        }
     //Overtime Calculation
         else if (hrsWrkd>40){
             grspay=(671.2+((hrsWrkd-40)*1.5*rate));
