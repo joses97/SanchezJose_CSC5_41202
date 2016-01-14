@@ -52,6 +52,14 @@ int main(int argc, char** argv) {
     cout<<"The third pass r = "<<r<<endl;
     cout<<"The third pass guess  = "<<guess<<endl;
     
+    //approx square root
+    r=n/guess;
+    guess=(guess+r)/2;
+    
+    //Output the results
+    cout<<"The fourth pass r = "<<r<<endl;
+    cout<<"The fourth pass guess  = "<<guess<<endl;
+    
     //Exit stage right and close
     return 0;
 }
