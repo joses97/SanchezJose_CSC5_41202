@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
         
     }
     while (years>0);
-    cout<<cost<<endl;
+    cout<<"The cost of the item will be "<<cost<<" dollars"<<endl;
     
     //Output the results
     
