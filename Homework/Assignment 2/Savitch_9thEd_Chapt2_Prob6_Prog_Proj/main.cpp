@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
     float netpay;         //net pay
     float rate=16.87f;    //payrate and hour
     //Input data hours worked and dependents 
+        cout<<"This program calculates gross pay, net pay, and taxes"<<endl;
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;
         cout<<"Now enter the number of dependents"<<endl;

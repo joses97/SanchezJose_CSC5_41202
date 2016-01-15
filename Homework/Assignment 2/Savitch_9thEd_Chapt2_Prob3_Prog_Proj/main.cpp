@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
     float months;                   //months received bonus pay
     float cnvMnth;                  // months of the year with extra pay
     //Input data
+        cout<<"This program calculates bonus pay at 7.6% "<<endl;
         cout<<"How much did you earn in salary last year"<<endl;
         cin>>salary;            //input salary earned
         cout<<"How many months of that year did you receive the bonus pay?"<<endl;

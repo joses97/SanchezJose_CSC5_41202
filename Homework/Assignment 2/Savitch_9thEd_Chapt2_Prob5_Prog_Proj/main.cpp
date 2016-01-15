@@ -23,6 +23,7 @@ int main(int argc, char** argv) {
     unsigned short diff;    //difference in capacity and people
     unsigned short diff2;   //difference in people and capacity
     //Input data for capacity and people
+        cout<<"This program determines if a room is over capacity"<<endl;
         cout<<"What is the capacity of the room?"<<endl;
         cin>>cap;
         cout<<"How many  people are in the room?"<<endl;

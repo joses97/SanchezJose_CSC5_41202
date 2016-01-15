@@ -21,6 +21,8 @@ int main(int argc, char** argv) {
     int temp1, temp2; //temp1 is first temp, temp 2 second temp
     float vel;        //velocity
     //Input data
+    cout<<"This program creates a table of temperature and its relation to "
+            "velocity"<<endl;
     cout<<"Please input the lower of the two temperature "<<endl;
     cin>>temp1;             //input temp1
     cout<<"Please input the higher of the two temperature "<<endl;

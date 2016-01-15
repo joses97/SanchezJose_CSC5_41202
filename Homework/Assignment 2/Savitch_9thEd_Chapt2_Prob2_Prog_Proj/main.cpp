@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
     float retroT;                   //total salary with bonus
     float retroM;                   //salary during bonus pay months
     //Input data
+    cout<<"This program calculates your bonus pay for 6 months at 7.6%"<<endl;
     cout<<"How much did you earn in salary last year"<<endl;
     cin>>salary;                    //input salary
     //Calculate or map inputs to outputs

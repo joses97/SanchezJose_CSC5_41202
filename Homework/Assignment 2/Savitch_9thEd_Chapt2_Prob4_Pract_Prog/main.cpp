@@ -22,7 +22,9 @@ int main(int argc, char** argv) {
     float sec, mph;          //remaining seconds per mile, miles per hour
     
     //Input data for mph
-    cout<<"Enter the Miles Per Hour"<<endl;
+    cout<<"This program converts a runners speed in MPH to minutes and seconds "
+            "per mile"<<endl;
+    cout<<"Enter the Miles Per Hour 1-60"<<endl;
     cin>>mph;
     
     //Calculations
@@ -30,8 +32,8 @@ int main(int argc, char** argv) {
     sec=((1/(mph/60))-mins)*60;//remaining seconds per mile pace, 
     
     //Output the results minutes per mile, then the remaining seconds per mile
-    cout<<"The speed will be "<<mins<<" minutes per mile with "<<sec<<" "
-            "seconds"<<endl;
+    cout<<"The speed will be "<<mins<<" minutes and "<<sec<<" seconds per mile"
+            " "<<endl;
     
     //Exit stage right and close
     return 0;

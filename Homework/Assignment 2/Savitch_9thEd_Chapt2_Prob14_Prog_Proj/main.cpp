@@ -22,7 +22,8 @@ int main(int argc, char** argv) {
     float tests, score; //number of tests wanting to calculate, test score
     float max, perc;     //max possible points, percent scored
     //Input data tests
-    cout<<"How many test would you like to average?"<<endl;
+    cout<<"This program finds test percentages"<<endl;
+    cout<<"How many tests would you like to find the percentage of?"<<endl;
     cin>>tests;
    //Do while statement
     do { //Input score and max score
@@ -38,7 +39,7 @@ int main(int argc, char** argv) {
         float perc=((score)/(max))*100;
         
         //Output percentage earned on test
-        cout<<"Your average score was    "<<perc<<"% "<<endl;
+        cout<<"You scored a              "<<perc<<"% "<<endl;
         nmbrtst+=1;  //increase test number by 1 each lop around
         tests-=1; //decrease tests by 1 each loop around
     }

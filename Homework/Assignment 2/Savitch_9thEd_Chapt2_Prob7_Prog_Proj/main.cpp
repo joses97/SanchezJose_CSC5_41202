@@ -21,6 +21,8 @@ int main(int argc, char** argv) {
     float cost, years;  //cost of item, years until item is purchased
     float rate, adjrate;//rate of inflation, rate in percentage form
     //Input data for cost, years, and rate
+    cout<<"This program calculates the cost of an item years "
+            "into the future"<<endl;
     cout<<"What is the total cost of the item?"<<endl;
     cin>>cost;
     cout<<"How many years until this item is purchased?"<<endl;
