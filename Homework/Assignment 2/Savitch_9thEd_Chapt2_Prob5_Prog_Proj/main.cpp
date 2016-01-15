@@ -38,13 +38,13 @@ int main(int argc, char** argv) {
                     "of "<<cap<<endl;
             cout<<"You have met the legal standards and can "
                     "fit "<<diff<<" more people"<<endl;
-    }else if (ppl>cap){ //while the input is valid 
-                        //display number of people, capacity, and difference2
+    }else  { //while the input is valid 
+             //display number of people, capacity, and difference2
+            cout<<"There are "<<ppl<<" in the room with a capacity "
+                    "of "<<cap<<endl;
             cout<<"The meeting cannot be held because the room is over "
                     "capacity by "<<diff2<<" people"<<endl;
     }
-
-
     //Exit stage right and close
     return 0;
 }
