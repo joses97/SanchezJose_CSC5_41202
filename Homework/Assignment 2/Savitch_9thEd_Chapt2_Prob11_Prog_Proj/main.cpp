@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: create table of velocities and temps 
+ * Purpose: create table of velocities and temperatures
  * Created on January 13, 2016, 10:52AM
  */
 

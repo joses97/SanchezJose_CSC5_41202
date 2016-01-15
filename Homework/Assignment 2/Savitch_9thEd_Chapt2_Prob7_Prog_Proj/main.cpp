@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Interest on 
+ * Purpose: Interest on item
  * Created on January 13, 2016, 10:52AM
  */
 
@@ -34,11 +34,10 @@ int main(int argc, char** argv) {
     do { //use loop to calculate cost and years while years>0
         cost=(cost+cost*adjrate);
         years=years-1; 
-        }
-    while (years>0);
-    cout<<"The cost of the item will be "<<cost<<" dollars"<<endl;
+    } while (years>0);
     
     //Output the results
+    cout<<"The cost of the item will be "<<cost<<" dollars"<<endl;
     
     //Exit stage right and close
     return 0;

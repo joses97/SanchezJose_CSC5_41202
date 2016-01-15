@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: 
+ * Purpose: To calculate net pay with and without over time
  * Created on January 12 2016
  */
 
@@ -55,6 +55,7 @@ int main(int argc, char** argv) {
             fedTax=grspay*0.14;      //federal tax with overtime
             stTax=grspay*0.05;       //state tax with overtime
     //Output Taxes, hours worked, gross pay, state tax, federal tax, union cut
+            cout<<fixed<<setprecision(1)<<showpoint;
             cout<<"You worked "<<hrsWrkd<<" hours this week"<<endl;
             cout<<"Your Gross pay for the week is "<<grspay<<" Dollars"<<endl;
             cout<<"Social security take "<<ssTax<<" Dollars"<<endl;
@@ -64,10 +65,12 @@ int main(int argc, char** argv) {
     //Test for number of dependents to determine insurance pay cut
         if (dpnds>=3){ //while dependents is greater than 3 calculate
                 netpay=grspay-(ssTax+fedTax+stTax+unn+ins); //netpay
+                cout<<fixed<<setprecision(1)<<showpoint;
                 cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
         else if (dpnds<3){ //while dependents is less than 3 calculate
+                cout<<fixed<<setprecision(1)<<showpoint;
                 netpay=grspay-(ssTax+fedTax+stTax+unn); //calculate netpay
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }

@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Babylonian square root calcualtor
+ * Purpose: Babylonian square root calculator
  * Created on January 13, 2016, 10:52AM
  */
 
