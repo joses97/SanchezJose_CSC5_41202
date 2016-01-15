@@ -19,31 +19,31 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables 
-    float tests, score, max, nmbrtst=1, fin, avg1, avg2, score2=0;
-    //Input data
+    int nmbrtst=1; //test number
+    float tests, score; //number of tests wanting to calculate, test score
+    float max, perc;     //max possible points, percent scored
+    //Input data tests
     cout<<"How many test would you like to average?"<<endl;
     cin>>tests;
-    //Calculations
-    do {
-        cout<<"Please enter test score"<<endl;
+   //Do while statement
+    do { //Input score and max score
+        cout<<"Please enter test score "<<endl;
         cin>>score;
         cout<<"Please enter total amount possible"<<endl;
         cin>>max;
-        cout<<"Score received for test "<<nmbrtst<<" is "<<score<<endl;
-        cout<<"Total amount possible "<<max<<endl;
+        //Output test number, score, and max score.
+        cout<<"Score received for test   "<<nmbrtst<<" is "<<score<<endl;
+        cout<<"Total amount possible     "<<max<<endl;
         
-        //Calculations
-        avg1=score*tests;
-        avg2=max*tests;
-        float fin=((avg1)/(avg2))*100;
-        cout<<"Your average score was "<<fin<<"% "<<endl;
-        nmbrtst+=1;
-        tests-=1;
+        //Calculations 
+        float perc=((score)/(max))*100;
+        
+        //Output percentage earned on test
+        cout<<"Your average score was    "<<perc<<"% "<<endl;
+        nmbrtst+=1;  //increase test number by 1 each lop around
+        tests-=1; //decrease tests by 1 each loop around
     }
-    while (tests>0);
-    //Condition
-    
-    //Output the results
+    while (tests>0); //condition tests>0
     
     //Exit stage right and close
     return 0;
