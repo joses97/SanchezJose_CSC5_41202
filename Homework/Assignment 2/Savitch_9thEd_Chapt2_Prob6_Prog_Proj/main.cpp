@@ -25,20 +25,20 @@ int main(int argc, char** argv) {
     float stTax, grspay;  //state tax take and gross pay
     float netpay;         //net pay
     float rate=16.87f;    //payrate and hour
-    //Input data
+    //Input data hours worked and dependents 
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;
         cout<<"Now enter the number of dependents"<<endl;
         cin>>dpnds;
     //If statements to determine hours and pay
-        if (hrsWrkd<=40) {
+        if (hrsWrkd<=40) { //while input is valid calculate
     //Calculate charges
-            grspay=hrsWrkd*rate;
-            netpay=grspay-(ssTax+fedTax+stTax+unn);
-            ssTax=hrsWrkd*rate*0.06;
-            fedTax=hrsWrkd*rate*0.14;
-            stTax=hrsWrkd*rate*0.05;
-    //Output Taxes
+            grspay=hrsWrkd*rate;        //calculate grosspay
+            netpay=grspay-(ssTax+fedTax+stTax+unn); //calculate netpay
+            ssTax=hrsWrkd*rate*0.06;    //calculate tax for social security
+            fedTax=hrsWrkd*rate*0.14;   //tax for federal level
+            stTax=hrsWrkd*rate*0.05;    //tax for state
+    //Output Taxes, hours worked, gross pay, state tax, federal tax, union cut
             cout<<fixed<<setprecision(1)<<showpoint;
             cout<<"You worked "<<hrsWrkd<<" hours this week"<<endl;
             cout<<"Your Gross pay for the week is "<<grspay<<" Dollars"<<endl;
@@ -48,27 +48,27 @@ int main(int argc, char** argv) {
             cout<<"The union takes "<<unn<<" Dollars"<<endl;
         }
     //Overtime Calculation
-        else if (hrsWrkd>40){
-            grspay=(671.2+((hrsWrkd-40)*1.5*rate));
-            netpay=grspay-(ssTax+fedTax+stTax+unn);
-            ssTax=grspay*0.06;
-            fedTax=grspay*0.14;
-            stTax=grspay*0.05;
-    //Output Taxes
+        else if (hrsWrkd>40){ //else calculate 
+            grspay=(671.2+((hrsWrkd-40)*1.5*rate)); //gross pay with overtime
+            netpay=grspay-(ssTax+fedTax+stTax+unn); //netpay with overtime
+            ssTax=grspay*0.06;       //state tax with overtime
+            fedTax=grspay*0.14;      //federal tax with overtime
+            stTax=grspay*0.05;       //state tax with overtime
+    //Output Taxes, hours worked, gross pay, state tax, federal tax, union cut
             cout<<"You worked "<<hrsWrkd<<" hours this week"<<endl;
             cout<<"Your Gross pay for the week is "<<grspay<<" Dollars"<<endl;
             cout<<"Social security take "<<ssTax<<" Dollars"<<endl;
             cout<<"Federal income tax is "<<fedTax<<" Dollars"<<endl;
             cout<<"State income tax is "<<stTax<<" Dollars"<<endl;
             cout<<"The union takes "<<unn<<" Dollars"<<endl;}
-    //Dependent test
-        if (dpnds>=3){
-                netpay=grspay-(ssTax+fedTax+stTax+unn+ins);
+    //Test for number of dependents to determine insurance pay cut
+        if (dpnds>=3){ //while dependents is greater than 3 calculate
+                netpay=grspay-(ssTax+fedTax+stTax+unn+ins); //netpay
                 cout<<"The Health Insurance Cost is "<<ins<<" Dollars"<<endl;
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
-        else if (dpnds<3){
-                netpay=grspay-(ssTax+fedTax+stTax+unn);
+        else if (dpnds<3){ //while dependents is less than 3 calculate
+                netpay=grspay-(ssTax+fedTax+stTax+unn); //calculate netpay
                 cout<<"Your Net Pay is "<<netpay<<" Dollars"<<endl;
             }
         
