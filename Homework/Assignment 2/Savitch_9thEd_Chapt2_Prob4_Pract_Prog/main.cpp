@@ -7,7 +7,6 @@
 
 //System Libraries
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 //User Libraries
@@ -19,16 +18,16 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables 
-    int mins;
-    float sec, mph;
-    //Input data
+    int mins;                //whole minutes per mile
+    float sec, mph;          //remaining seconds per mile, miles per hour
+    //Input data for mph
     cout<<"Enter the Miles Per Hour"<<endl;
     cin>>mph;
     
     //Calculations
-    mins=(1/(mph/60));
-    sec=((1/(mph/60))-mins)*60;
-    //Output the results
+    mins=(1/(mph/60));      //calculate whole minutes per mile pace
+    sec=((1/(mph/60))-mins)*60;//remaining seconds per mile pace, 
+    //Output the results minutes per mile, then the remaining seconds per mile
     cout<<"The speed will be "<<mins<<" minutes per mile with "<<sec<<" "
             "seconds"<<endl;
     

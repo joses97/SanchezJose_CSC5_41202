@@ -19,9 +19,12 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables 
-    unsigned const short unn=10, ins=35;
-    float hrsWrkd, dpnds, ssTax, fedTax, stTax, grspay, netpay;
-    float rate=16.87f;
+    unsigned const short unn=10, ins=35;//union take and insurance take
+    float hrsWrkd, dpnds; //hours worked and dependents
+    float ssTax, fedTax;  //social security tax take and fed tax take
+    float stTax, grspay;  //state tax take and gross pay
+    float netpay;         //net pay
+    float rate=16.87f;    //payrate and hour
     //Input data
         cout<<"Please enter number of hours worked this week"<<endl;
         cin>>hrsWrkd;

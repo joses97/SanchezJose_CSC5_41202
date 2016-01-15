@@ -27,28 +27,28 @@ int main(int argc, char** argv) {
     float           payment;//Payment $'s
     float           intrest;//Total interest paid
     
-    //Input data
+    //Input data for loan amount
     cout<<"Car Loan Payment Calculator"<<endl;
     cout<<"Input Loan Amount for Car"<<endl;
-    cin>>loanAmt;
+    cin>>loanAmt;                                   
     cout<<"Input Number of monthly payments"<<endl;
-    cin>>nMonths;
+    cin>>nMonths;                                   //input data for months
     cout<<"Input the interest rate in percent"<<endl;
-    cin>>intRate;
+    cin>>intRate;                                   //input data for interest rate
     
     //Calculate or map inputs to outputs
     float temp=static_cast<float>(pow(1+static_cast<float>(intRate)/CNVPRC,nMonths));
-    payment=temp*intRate/CNVPRC*loanAmt/(temp-1);
-    intrest=nMonths*payment-loanAmt;
+    payment=temp*intRate/CNVPRC*loanAmt/(temp-1);   //Calculates monthly payments
+    intrest=nMonths*payment-loanAmt;                //Calculates interest paid
     
-    //Output the results
+    //Output the results for loan.
     cout<<endl<<"Car Loan Payment Calculator Results"<<endl;
-    cout<<"Loan Amount for Car        = $"<<loanAmt<<endl;
-    cout<<"Number of monthly payments =  "<<nMonths<<endl;
-    cout<<"Interest rate              =  "<<intRate<<"%"<<endl;
+    cout<<"Loan Amount for Car        = $"<<loanAmt<<endl;  
+    cout<<"Number of monthly payments =  "<<nMonths<<endl;      //output months
+    cout<<"Interest rate              =  "<<intRate<<"%"<<endl; //output interest rate
     cout<<fixed<<setprecision(2)<<showpoint;
-    cout<<"Monthly Payment            = $"<<payment<<endl;
-    cout<<"Interest Paid              = $"<<intrest<<endl;
+    cout<<"Monthly Payment            = $"<<payment<<endl;      //output monthly payments   
+    cout<<"Interest Paid              = $"<<intrest<<endl;      //output interest paid
     
 
     //Exit stage right

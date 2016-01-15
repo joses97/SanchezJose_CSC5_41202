@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Check out IDE
+ * Purpose: create table for average tests
  * Created on January 13, 2016, 10:52AM
  */
 
