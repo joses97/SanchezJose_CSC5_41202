@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
     }   while (abs((r-guess)/guess)*100>tol); //ends the loop when close enough 
     //Output the results
     cout<<"The r = "<<r<<endl;
-    cout<<"The guess  = "<<guess<<endl;
+    cout<<"The guess is "<<guess<<endl;
     
     //Exit stage right and close
     return 0;

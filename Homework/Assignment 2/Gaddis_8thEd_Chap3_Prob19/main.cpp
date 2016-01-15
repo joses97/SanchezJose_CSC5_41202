@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     
     //Input data for loan amount
     cout<<"Car Loan Payment Calculator"<<endl;
-    cout<<"Input Loan Amount for Car"<<endl;
+    cout<<"Input Loan Amount for Car up to $65,000"<<endl;
     cin>>loanAmt;                                   
     cout<<"Input Number of monthly payments"<<endl;
     cin>>nMonths;                                   //input data for months
