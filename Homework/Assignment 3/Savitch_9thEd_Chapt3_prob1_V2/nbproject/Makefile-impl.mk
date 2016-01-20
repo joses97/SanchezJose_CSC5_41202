@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Savitch__8thEd_Chapt2_Prob12_V2
+PROJECTNAME=Savitch_9thEd_Chapt3_prob1_V2
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     cin>>nTerms;
     
     //Calculate pi
-    for (x<3.14;x>=3.14;pi=4*((pow(-1,nTerms))/(2*nTerms+1)));
+    for (x<3.14;x>=3.14;pi=4*((pow(1,nTerms))/(2*nTerms+1)));
     cout<<pi<<endl;
   
 
