@@ -3,11 +3,13 @@
  * Author: Jose Sanchez
  * Purpose: Table of Salary Doubling
  * Created on January 20, 2016
+ * double is required because number of significant digits
+ * anything larger than $99,999.99 requires a double
  */
 
 //System Libraries
-#include <iostream>
-#include <iomanip>
+#include <iostream> //I/O formating
+#include <iomanip>  //Formating 
 using namespace std;
 
 //User Libraries
@@ -24,7 +26,7 @@ int main(int argc, char** argv) {
    
     //Declare variables
     unsigned int salary=1; //Salary starting at a penny 
-    float totPay=salary;          //Total pay by summing the salary
+    double totPay=salary;          //Total pay by summing the salary
     
     //Loop o generate the salary Table and Total Paid
     cout<<"Day        $Salary         $Total"<<endl;
@@ -33,7 +35,7 @@ int main(int argc, char** argv) {
     for (int day=2;day<=31;day++){
         salary*=2;
         totPay+=salary;
-        cout<<setw(3)<<day<<setw(15)<<salary/100.0f<<setw(15)<<totPay/100.0f<<endl;
+        cout<<setw(3)<<day<<setw(15)<<salary/100.0<<setw(15)<<totPay/100.0<<endl;
     }
     
     
