@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
     n100  =(number-number%100)/100; //number of 100s
     number=(number-n100*100);       //subtract off 100s
     n10   =(number-number%10)/10;   //number of 10s
-    n1    =(number-n10*10);         //subtract off 10s to et 1s
+    n1    =(number-n10*10);         //subtract off 10s to get 1s
     
     //Output the number of its components
     cout<<"The number of thousands="<<static_cast<int>(n1000)<<endl;
