@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     short time, min;
     float cost;
     //Explaining Program and input day of the week and time and minutes
-    cout<<"Hello, this program tell you the cost of a call"<<endl;
+    cout<<"Hello, this program tell you the cost of a long distance call"<<endl;
     cout<<"Please enter the day of the call with the first to letters"<<endl;
     cin>>day>>day1; //input to letter code for day of the week
     capDay=toupper(day);    //convert to uppercase
