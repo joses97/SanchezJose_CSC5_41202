@@ -1,11 +1,11 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- *
+ * purpose: Fibonacci sequence calculator 
  * Created on January 19, 2016, 9:30 AM
  */
 
-#include <iostream>
+#include <iostream> //Input and output
 
 using namespace std;
 
@@ -19,12 +19,15 @@ int main(int argc, char** argv) {
    unsigned int fi, fim1, fim2; //Designations in the sequence
    unsigned short nTerms;       //Number of terms in the sequence
    unsigned short counter;      //Current position in the sequence
-   //Initialize the sequence
-   fim2=fim1=1;     //Start the sequence
+   
+   //Start the sequence
+   fim2=fim1=1;     
    counter=2; 
+   
    //Input the number of terms in the sequence
    cout<<"Input the number of terms in the sequence"<<endl;
    cin>>nTerms;
+   
    //Output or calculate the output required
    if (nTerms==1) {
         cout<<"The "<<nTerms<<" in the sequence = ";
