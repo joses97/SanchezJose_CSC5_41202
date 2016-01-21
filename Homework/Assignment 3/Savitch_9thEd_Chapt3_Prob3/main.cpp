@@ -93,6 +93,8 @@ int main(int argc, char** argv) {
             cout<<"You are a Scorpio"<<endl;
             if (bDay<=24&&bDay>=22){        //test for cusp
                 cout<<"Your birthday is on a cusp!"<<endl;
+            }else if (bMonth==11&&bDay>=19){
+                cout<<"Your birthday is on a cusp!"<<endl;
             }
         //horoscope Nov to Dec
         }else if (bMonth==11&&bDay>=22||bMonth==12&&bDay<=21){
