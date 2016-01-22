@@ -86,9 +86,9 @@ int main(int argc, char** argv) {
                    cout<<fim2<<endl;
                }else{
                    do{
-                       fi=fim1+fim2;
+                       fi=fim1+fim2;  
                        counter++;
-                       fim2=fim1;
+                       fim2=fim1;   
                        fim1=fi;
                    }while (counter<nTerms);
                    cout<<"Term "<<nTerms<<" in the sequence = ";
@@ -144,7 +144,7 @@ int main(int argc, char** argv) {
            }break;
            case 4:{
                    //Declare and initialize variables 
-                    short bMonth, bDay; //birthmonth and birthday 
+                    short bMonth, bDay; //birth month and birthday 
                     char answr;         //answer for repetition problem 
                     //do loop for repetition 
                     do{
@@ -380,7 +380,7 @@ int main(int argc, char** argv) {
            }break;
            case 6:{
                    //initial variables for c and f
-                    int f=212, c=100; //fahrenhiet is 212 when c=100 
+                    int f=212, c=100; //Fahrenheit is 212 when c=100 
                     //show program problem number and the problem 
                     cout<<"Solution to Savitch 9thEd Practice Program Problem 7"<<endl;
 
@@ -576,6 +576,9 @@ int main(int argc, char** argv) {
                 }else {            //else 
                     cout<<"There sphere you entered will sink!"<<endl; //sphere sinks
                 }
+           }break;
+           default: {
+               cout<<"Please enter a number between 1 and 10"<<endl;
            }break;
        
        }
