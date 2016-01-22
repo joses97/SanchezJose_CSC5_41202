@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Check out IDE
- * Created on January 4, 2016, 10:18 AM
+ * Purpose: find factorial of N
+ * Created on January 20 2016
  */
 
 //System Libraries
