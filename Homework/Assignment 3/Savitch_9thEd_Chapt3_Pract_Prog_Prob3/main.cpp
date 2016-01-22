@@ -20,13 +20,16 @@ int main(int argc, char** argv) {
     //Declare and initialize variables 
     short bMonth, bDay;
     char answr;
-    //Input data
+    //do loop for repetition 
     do{
+        //name the problem 
+        cout<<"Solution for Savitch 9thEd Chapter 3 Practice Problem 3"<<endl;
+        //Input the birth month, then the birth date
         cout<<"Hello! This program tells you your horoscope"<<endl;
         cout<<"Please enter the month you were born in"<<endl;
-        cin>>bMonth;
+        cin>>bMonth;    //birth month
         cout<<"Please enter the day you were born"<<endl;
-        cin>>bDay;
+        cin>>bDay;      //birthday
     //Select the month using else if
         if (bDay>31||bMonth>12){
             cout<<"Please enter a valid day or month"<<endl;
@@ -110,9 +113,10 @@ int main(int argc, char** argv) {
             }else if (bMonth==1&&bDay>=17){
                 cout<<"Your birthday is on a cusp!"<<endl;
             }
-        }else {
+        }else { //telling user to enter a valid day
             cout<<"Please enter a valid day"<<endl;
-        }
+        }   
+        //asking user for Y or N to see if they want to repeat 
         cout<<"Would you like to check another birthdate?"
                 " Please answer Y or N"<<endl;
         cin>>answr;

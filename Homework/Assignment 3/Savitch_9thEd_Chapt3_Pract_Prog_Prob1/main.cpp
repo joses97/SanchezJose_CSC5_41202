@@ -19,7 +19,7 @@ using namespace std;
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    //Declare and initialize variables 
+    //show which problem it is and name the game
     cout<<endl<<"Solution to Savitch 9thEd chapter 3 problem 1"<<endl;
     cout<<endl<<"The rock-paper-scissors game"<<endl<<endl;
     
@@ -61,7 +61,7 @@ int main(int argc, char** argv) {
         }else {
             cout<<"You lose!"<<endl;
         }
-    cout<<"Would you like to go again? Please enter Y or N"<<endl;
+    cout<<"Play Rock Paper Scissors again? Please enter Y or N"<<endl;
     cin>>answr;
     }while(toupper(answr)=='Y');    
     //Exit stage right and close
