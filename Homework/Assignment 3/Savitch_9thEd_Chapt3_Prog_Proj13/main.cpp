@@ -9,6 +9,7 @@
 //System Libraries
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -21,13 +22,7 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Program Explantation 
-    int val;
-    cout<<"Calculating prime numbers from 3-100"<<endl;
-    //Start for loop to count x up
-    for (int x=3;x<=100;x++){
-        int n;
-        
-    }
+
     
     //Exit stage right and close
     return 0;
