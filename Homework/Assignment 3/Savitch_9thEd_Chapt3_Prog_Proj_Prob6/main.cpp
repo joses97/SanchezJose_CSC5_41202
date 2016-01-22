@@ -25,6 +25,8 @@ int main(int argc, char** argv) {
     float volume; //volume of the sphere
     float buoy;   //calculation for buoyancy
     //Explanation for program
+    cout<<"Solution to Savitch 9thEd Chapter 3 Programming Project "
+            "Problem 6"<<endl;
     cout<<"Hello this program will help you with finding if an object "
             "is buoyant"<<endl;
     //Input the weight and the radius of the sphere

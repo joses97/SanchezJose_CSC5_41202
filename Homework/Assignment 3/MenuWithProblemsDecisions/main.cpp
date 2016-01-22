@@ -9,7 +9,8 @@
 #include <iostream> //I/O
 #include <cstdlib>  //rand function
 #include <ctime>    //time to set the randome seed
-#include <iomanip>
+#include <iomanip>  //used for precision in decimals
+#include <cmath>    //used for pow function to calculate pi
 using namespace std;
 
 //User Libraries
@@ -378,8 +379,204 @@ int main(int argc, char** argv) {
                   }while(toupper(answr)=='Y');
            }break;
            case 6:{
-               
-           }
+                   //initial variables for c and f
+                    int f=212, c=100; //fahrenhiet is 212 when c=100 
+                    //show program problem number and the problem 
+                    cout<<"Solution to Savitch 9thEd Practice Program Problem 7"<<endl;
+
+                    //Outputting  and program explanation 
+                    cout<<"This program find when Celsius = Fahrenheit"<<endl;
+                    //Do while loop to find when c=f
+                    do{
+                        c--;        //lowering c by 1 each loop
+                        f=(9.0f/5.0f)*c+32; //calculating for f
+                    }while (f!=c);          //condition, do while f!=c
+                    //Output when F=C
+                    cout<<"When Fahrenheit = "<<f<<" degrees Celsius"
+                                " is also "<<c<<" degrees";     
+           }break;
+           case 7: {
+               //Initialize variables
+                char day,day1; //user input
+                char capDay,capDay1; //used to make user input caps
+                short time, min;     //time call started, minutes call went on for
+                float cost;         //cost of the call
+                unsigned char answr; //test to see if user wants to repeat
+                //show user which problem this is
+                cout<<"Solution to Savitch 9th Ed "
+                        "Chapter 3 Programming Project Probelm 1"<<endl;
+
+                //Explaining Program and input day of the week and time and minutes
+                cout<<"Hello, this program tell you the cost of a long distance call"<<endl;
+                do {
+                cout<<"Please enter the day of the call with the first to letters"<<endl;
+                cout<<"Example Monday=MO"<<endl;
+                cin>>day>>day1; //input to letter code for day of the week
+                capDay=toupper(day);    //convert to uppercase
+                capDay1=toupper(day1);  //convert to uppercase
+                cout<<"Please enter the hour you are making this call in 24 hour"
+                        " format. EX: 6:00PM=1800"<<endl;
+                cin>>time;      //Input for time
+                cout<<"Please enter how many minutes the call will last"<<endl;
+                cin>>min;       //Input for number of minutes
+                //if statements to determine what day user calls on 
+                if (capDay=='M'||capDay=='T'||capDay=='W'||capDay1=='H'||capDay=='F'){
+                    if (time>=800&&time<=1800){ //if range 800 to 1800
+                        //calculate value for cost
+                        cost=0.40f*min;        
+                        //output min and cost to 2 decimal places
+                        cout<<"The cost for a "<<min<<" "
+                                "minute call is $"<<setprecision(2)<<fixed<<cost<<endl;
+                    }else { //else not from 800 to 1800
+                        //calculate cost 
+                        cost=0.25f*min; 
+                        //output min and cost to 2 decimal places
+                        cout<<"The cost for a "<<min<<""
+                                " minute call is $"<<setprecision(2)<<fixed<<cost<<endl;
+                    }
+                }else { //if on the weekend
+                    //calculate cost 
+                    cost=0.15f*min;
+                    //output min and cost to 2 decimal places
+                    cout<<"The cost for a "<<min<<""
+                            " minute call is $"<<setprecision(2)<<fixed<<cost<<endl;
+                } 
+                //ask user if they would like to repeat the question
+                cout<<"Would you like to test another call? Y or N"<<endl;
+                    cin>>answr;
+                  }while(toupper(answr)=='Y');
+           }break;
+           case 8: {
+               //Declare Variables
+                int n; //Number of terms to calculate PI to
+                float pi, piFin; //pi value given after calculations
+
+                //Explaining which problem is being solved
+                cout<<"Solution to Savitch 9thEd "
+                        "Chapter 3 Programming Project Problem 11"<<endl;
+
+                //Input terms and explanation 
+                cout<<"This program estimates pi"<<endl;
+                cout<<"Please enter the number of terms you would like to estimate"
+                        "PI to"<<endl;
+                //Input number of terms to for calculation for pi
+                cin>>n;
+
+                //Calculate pi to number of terms using while loop;
+                pi=1; //to have for the initial addition of 1
+                while (n>0){
+                    pi=pow((-1),n)/(2*n+1)+pi; //calculate value for the nth term 
+                    n--;    //subtract 1 from n every loop
+                }
+                //calculate value for PI
+                piFin=pi*4;
+                //Output the final estimate for pi
+                cout<<"The Approximation for PI "<<piFin<<endl;
+           }break;
+           case 9:{
+               //The Problem to solve
+                cout<<endl<<"Solution to Savitch 9thEd Chap3 Prob3"<<endl;
+                cout<<endl<<"The Roman numeral conversion program"<<endl;
+
+                //Declare and initialize variables
+                unsigned short number;           //variable for user input
+                unsigned char n1000,n100,n10,n1; //number of 1000s,100s,10s,1s
+                unsigned char answr; //test to see if user wants to repeat
+
+                //Input number to convert to Roman numerals
+                do {
+                cout<<"Please input a number between 1000-3000 to convert"<<endl;
+                cin>>number;
+                cout<<"The number to convert= "<<number<<endl;
+
+                //Calculate the number of 1000's, 100's, 10's, 1's
+                n1000 =(number-number%1000)/1000;//number of 1000s
+                number=(number-n1000*1000);     //subtract off 1000s
+                n100  =(number-number%100)/100; //number of 100s
+                number=(number-n100*100);       //subtract off 100s
+                n10   =(number-number%10)/10;   //number of 10s
+                n1    =(number-n10*10);         //subtract off 10s to get 1s
+
+                //Output the results
+                cout<<"The Roman numeral equivalent is ";
+
+                //Output the 1000s
+                switch(n1000){
+                    case 3: cout<<"M";
+                    case 2: cout<<"M";
+                    case 1: cout<<"M";
+                }
+                //Output the 100s
+                switch(n100){
+                    case 9: cout<<"C";break;
+                    case 8: cout<<"DCCC";break;
+                    case 7: cout<<"DCC";break;
+                    case 6: cout<<"DC";break;
+                    case 5: cout<<"D";break;
+                    case 4: cout<<"CD";break;
+                    case 3: cout<<"C";
+                    case 2: cout<<"C";
+                    case 1: cout<<"C";
+                }
+                //Output the 10s
+                switch(n10){
+                    case 9: cout<<"XC";break;
+                    case 8: cout<<"LXXX";break;
+                    case 7: cout<<"LXX";break;
+                    case 6: cout<<"LX";break;
+                    case 5: cout<<"L";break;
+                    case 4: cout<<"XL";break;
+                    case 3: cout<<"X";
+                    case 2: cout<<"X";
+                    case 1: cout<<"X";
+                }
+                //Output the 1s
+                switch(n1){
+                    case 9: cout<<"IX";break;
+                    case 8: cout<<"VIII";break;
+                    case 7: cout<<"VII";break;
+                    case 6: cout<<"VI";break;
+                    case 5: cout<<"V";break;
+                    case 4: cout<<"IV";break;
+                    case 3: cout<<"I";
+                    case 2: cout<<"I";
+                    case 1: cout<<"I";
+                }
+                cout<<endl<<"Would you like to test another number? Y or N"<<endl;
+                cin>>answr;
+                }while(toupper(answr)=='Y');
+           }break;
+           case 10: {
+               //declare variables
+                float weight; //weight for sphere
+                float radius; //radius of sphere
+                float volume; //volume of the sphere
+                float buoy;   //calculation for buoyancy
+                //Explanation for program
+                cout<<"Solution to Savitch 9thEd Chapter 3 Programming Project "
+                        "Problem 6"<<endl;
+                cout<<"Hello this program will help you with finding if an object "
+                        "is buoyant"<<endl;
+                //Input the weight and the radius of the sphere
+                cout<<"Please input the weight of the sphere in pounds"<<endl;
+                cin>>weight;
+                cout<<"Please enter the radius of the sphere"<<endl;
+                cin>>radius;
+
+                //calculations for volume of the sphere
+                volume=(4.0f/3.0f)*M_PI*(radius*radius*radius);
+                cout<<volume<<endl;
+                //calculate value for buoyancy 
+                buoy=volume*62.4f;
+                cout<<buoy<<endl;
+
+                //if statements for buoyancy test 
+                if (buoy>=weight){ //if buoy>=weight, 
+                    cout<<"The sphere you entered will float!"<<endl;//sphere floats!
+                }else {            //else 
+                    cout<<"There sphere you entered will sink!"<<endl; //sphere sinks
+                }
+           }break;
        
        }
        cout<<"Would you like to see another problem? Y or N"<<endl;

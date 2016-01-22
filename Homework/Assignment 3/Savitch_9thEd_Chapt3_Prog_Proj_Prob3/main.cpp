@@ -25,8 +25,10 @@ int main(int argc, char** argv) {
     //Declare and initialize variables
     unsigned short number;           //variable for user input
     unsigned char n1000,n100,n10,n1; //number of 1000s,100s,10s,1s
+    unsigned char answr; //test to see if user wants to repeat
     
     //Input number to convert to Roman numerals
+    do {
     cout<<"Please input a number between 1000-3000 to convert"<<endl;
     cin>>number;
     cout<<"The number to convert= "<<number<<endl;
@@ -90,6 +92,9 @@ int main(int argc, char** argv) {
         case 2: cout<<"I";
         case 1: cout<<"I";
     }
+    cout<<"Would you like to test another number?"<<endl;
+    cin>>answr;
+    }while(toupper(answr)=='Y');
     //Exit stage right and close
     return 0;
 }

@@ -20,7 +20,9 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //initial variables for c and f
-    int f=212, c=100;
+    int f=212, c=100; //fahrenhiet is 212 when c=100 
+    //show program problem number and the problem 
+    cout<<"Solution to Savitch 9thEd Practice Program Problem 7"<<endl;
     
     //Outputting  and program explanation 
     cout<<"This program find when Celsius = Fahrenheit"<<endl;
