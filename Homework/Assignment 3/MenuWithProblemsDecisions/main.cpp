@@ -255,7 +255,7 @@ int main(int argc, char** argv) {
                 char answr;         //answer to repetition question 
                 do{
                     //output the problem information 
-                    cout<<"Solution for Savitch 9thEd Chapter 3 Practice Program 3"<<endl;
+                    cout<<"Solution for Savitch 9thEd Chapter 3 Practice Program 4"<<endl;
                     //Input data for birth month and birth day 
                     cout<<"Hello! This program tells you your horoscope"<<endl;
                     cout<<"Please enter the month you were born in"<<endl;
@@ -392,7 +392,7 @@ int main(int argc, char** argv) {
                         f=(9.0f/5.0f)*c+32; //calculating for f
                     }while (f!=c);          //condition, do while f!=c
                     //Output when F=C
-                    cout<<"When Fahrenheit = "<<f<<" degrees Celsius"
+                    cout<<endl<<"When Fahrenheit = "<<f<<" degrees Celsius"
                                 " is also "<<c<<" degrees";     
            }break;
            case 7: {
@@ -579,7 +579,7 @@ int main(int argc, char** argv) {
            }break;
        
        }
-       cout<<"Would you like to see another problem? Y or N"<<endl;
+       cout<<endl<<"Would you like to see another problem? Y or N"<<endl;
        cin>>answr;
     }while (toupper(answr)=='Y');
     //Output the results
