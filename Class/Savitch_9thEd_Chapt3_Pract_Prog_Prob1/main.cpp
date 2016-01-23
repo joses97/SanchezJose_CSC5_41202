@@ -7,7 +7,8 @@
  */
 
 //System Libraries
-#include <iostream>
+#include <iostream> //I/O
+#include <iomanip>  //Set precision 
 using namespace std;
 
 //User Libraries
@@ -40,7 +41,8 @@ int main(int argc, char** argv) {
     mpg=miles/gallons;    //finding miles per gallon
     
     //output mpg
-    cout<<"Your car had an efficiency of "<<mpg<<" miles per gallon"<<endl;
+    cout<<"Your car had an efficiency of "
+            ""<<fixed<<showpoint<<setprecision(2)<<mpg<<" miles per gallon"<<endl;
     //Exit stage right and close
     return 0;
 }

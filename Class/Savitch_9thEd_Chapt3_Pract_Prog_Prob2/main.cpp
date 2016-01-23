@@ -2,12 +2,13 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: 
+ * Purpose: miles to gallons calculator
  * Created on January 22 2016, 2:00PM
  */
 
 //System Libraries
-#include <iostream>
+#include <iostream> //I/O
+#include <iomanip>  //Set precision 
 using namespace std;
 
 //User Libraries
@@ -46,7 +47,8 @@ int main(int argc, char** argv) {
     mpg2=miles2/gallons2;    //finding miles per gallon secpnd car
     
     //output mpg and mpg2
-    cout<<"Car 1 had an efficiency of "<<mpg<<" miles per gallon"<<endl;
+    cout<<"Car 1 had an efficiency of"
+            " "<<fixed<<showpoint<<setprecision(2)<<mpg<<" miles per gallon"<<endl;
     cout<<"Car 2 had an efficiency of "<<mpg2<<" miles per gallon"<<endl;
     //if statement to determine which car has a higher miles per gallon 
     if (mpg>mpg2){  //mpg>mpg2
