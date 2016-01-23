@@ -17,13 +17,7 @@ using namespace std;
 //Problem said to make this a global constant
 const float LPERG=0.264179f; //conversion 1 gallon = 0.264179 liters
 //Function prototypes
-float mileper(float miles, float liters){ //miles and liters
-    float mpg;  //miles per gallon
-    float gallons;  //gallons
-    gallons=liters*LPERG;   //calculate gallons 
-    mpg=miles/gallons;     //calculate miles per gallon
-    return mpg;
-}
+float mileper(float miles, float liters);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Problem explanation
@@ -56,5 +50,11 @@ int main(int argc, char** argv) {
     }while(toupper(answr)=='Y');
     //Exit stage right and close
     return 0;
+}float mileper(float miles, float liters){ //miles and liters
+    float mpg;  //miles per gallon
+    float gallons;  //gallons
+    gallons=liters*LPERG;   //calculate gallons 
+    mpg=miles/gallons;     //calculate miles per gallon
+    return mpg;
 }
 

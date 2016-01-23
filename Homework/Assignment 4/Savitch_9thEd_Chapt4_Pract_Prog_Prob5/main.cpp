@@ -16,16 +16,7 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-float infl(float priceP, float price1){
-    //declare variables
-    float diff; //difference price P and price 1
-    float inflR;//inflation rate
-    //calculate diff and inflR
-    diff=priceP-price1; //find difference in price present and price year ago
-    inflR=diff/price1*100;  //calculate inflation rate
-    //return infR
-    return inflR;
-}
+float infl(float priceP, float price1);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Problem explanation
@@ -56,5 +47,14 @@ int main(int argc, char** argv) {
     }while(toupper(answr)=='Y');
     //Exit stage right and close
     return 0;
+}float infl(float priceP, float price1){
+    //declare variables
+    float diff; //difference price P and price 1
+    float inflR;//inflation rate
+    //calculate diff and inflR
+    diff=priceP-price1; //find difference in price present and price year ago
+    inflR=diff/price1*100;  //calculate inflation rate
+    //return infR
+    return inflR;
 }
 

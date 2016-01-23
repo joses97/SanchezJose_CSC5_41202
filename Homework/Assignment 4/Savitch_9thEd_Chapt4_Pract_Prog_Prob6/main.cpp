@@ -16,13 +16,7 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-float intrst(float balnce, float monIntr, float numMon){
-    do{
-        balnce=(monIntr/100.0f*balnce)+balnce;
-        numMon--;
-    }while(numMon>0);
-    return balnce;
-}
+float intrst(float balnce, float monIntr, float numMon);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Problem explanation
@@ -46,5 +40,11 @@ int main(int argc, char** argv) {
             ""<<intrst(balance, intr, mon)<<" will be the amount owed"<<endl;
     //Exit stage right and close
     return 0;
+}float intrst(float balnce, float monIntr, float numMon){
+    do{
+        balnce=(monIntr/100.0f*balnce)+balnce;
+        numMon--;
+    }while(numMon>0);
+    return balnce;
 }
 
