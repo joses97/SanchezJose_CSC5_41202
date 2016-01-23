@@ -2,12 +2,14 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Check out IDE
- * Created on January 4, 2016, 10:18 AM
+ * Purpose: 
+ * Created on January 22 2016, 2:00PM
  */
 
 //System Libraries
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 //User Libraries
@@ -18,13 +20,7 @@ using namespace std;
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    //Declare and initialize variables 
-    
-    //Input data
-    
-    //Calculate or map inputs to outputs
-    
-    //Output the results
+    //output Hello World
     cout<<"Hello World"<<endl;
     
     //Exit stage right and close
