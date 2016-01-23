@@ -17,7 +17,13 @@ using namespace std;
 //Problem said to make this a global constant
 const float LPERG=0.264179f; //conversion 1 gallon = 0.264179 liters
 //Function prototypes
-
+float mileper(float miles, float liters){ //miles and liters
+    float mpg;  //miles per gallon
+    float gallons;  //gallons
+    gallons=liters*LPERG;   //calculate gallons 
+    mpg=miles/gallons;     //calculate miles per gallon
+    return mpg;
+}
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Problem explanation
@@ -26,27 +32,25 @@ int main(int argc, char** argv) {
     unsigned char answr; //answer to repeat question to repeat entire program
     do{
         //Declare and initialize variables
-        float miles; //number of miles traveled by the user
-        float liters; //number of liters consumed by the users car
-        float gallons; //number of gallons used by the car
-        float mpg; // miles per gallon 
+        float mls; //number of miles traveled by the user
+        float lts; //number of liters consumed by the users car
+        float glns; //number of gallons used by the car
+        float mlsperg; // miles per gallon 
 
         //Input miles and liters
         cout<<"This program Takes liters consumed and miles "
                 "traveled and converts it to miles per gallon"<<endl;
         cout<<"How many miles have you traveled?"<<endl;
-        cin>>miles;     //input miles traveled
+        cin>>mls;     //input miles traveled
         cout<<"How many liters have you consumed?"<<endl;
-        cin>>liters;    //input liters used
-
-        //calculations
-        gallons=liters*LPERG; //finding gallons, 
-        mpg=miles/gallons;    //finding miles per gallon
+        cin>>lts;    //input liters used
 
         //output mpg
         cout<<"Your car had an efficiency of "
-                ""<<fixed<<showpoint<<setprecision(2)<<mpg<<""
+                ""<<fixed<<showpoint<<setprecision(2)
+                <<mileper(mls, lts) <<""
                 " miles per gallon"<<endl;
+        //input ask user if they wish to repeat
         cout<<"Would you like to try testing again? Y or N"<<endl;
         cin>>answr;
     }while(toupper(answr)=='Y');
