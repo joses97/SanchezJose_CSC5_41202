@@ -7,9 +7,7 @@
 
 //System Libraries
 #include <iostream> //I/O
-#include <cstdlib>  //random function
-#include <cmath>    
-#include <iomanip> 
+#include <iomanip>  //formatting
 using namespace std;
 
 //User Libraries
@@ -25,7 +23,7 @@ int main(int argc, char** argv) {
     cout<<endl<<"Display a temperature table"<<endl<<endl;
     
     //Declare variables
-    float slope=5.0f/9;//Slope of the line for temp conversion c/f
+    float slope=5.0f/9.0f;//Slope of the line for temp conversion c/f
     char intrcpt=-32;   //Scale 9/5 degrees c
     unsigned char c1=0, c2=100, f1=32, f2=212;//Data points of freezing a boiling
     
@@ -37,10 +35,6 @@ int main(int argc, char** argv) {
         float cintrp=c1+static_cast<float>(f-f1)/(f2-f1)*(c2-c1);
         cout<<setw(10)<<f<<setw(10)<<ceq<<setw(10)<<cintrp<<endl;
     }
-    
-    //Players turn
-    
-    //Keep playing
 
     //Exit stage right and close
     return 0;
