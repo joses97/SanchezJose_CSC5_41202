@@ -53,31 +53,36 @@ int main(int argc, char** argv) {
                 float dayIncr; //average daily population increase as a percent 
                 unsigned short numDays;    //number of days they will multiply for
                 unsigned short counter;    //count the number of days
+                unsigned char answr;    //answer to repetition question
+                //being do loop, repeat if user wishes
+                do{
+                    //input the initial population, daily population increase
+                    cout<<"Please enter the initial population of the organism"<<endl;
+                    cin>>pop;    //input initial population
+                    cout<<"Please enter the daily population increase percent EX: 10"<<endl;
+                    cin>>dayIncr;   //input daily increase as a percent
+                    cout<<"Enter the number of days the population will grow for"<<endl;
+                    cin>>numDays;//input number of days
 
-                //input the initial population, daily population increase
-                cout<<"Please enter the initial population of the organism"<<endl;
-                cin>>pop;    //input initial population
-                cout<<"Please enter the daily population increase percent EX: 10"<<endl;
-                cin>>dayIncr;   //input daily increase as a percent
-                cout<<"Enter the number of days the population will grow for"<<endl;
-                cin>>numDays;//input number of days
+                    //calculations
+                    dayIncr=dayIncr/100.0f; //convert day increase to a percent decimal form
 
-                //calculations
-                dayIncr=dayIncr/100.0f; //convert day increase to a percent decimal form
-
-                //statement to determine valid variables
-                if (pop>2&&dayIncr>=0&&numDays>1){
-                     //loop to determine final population after numDays
-                    for(int i=0;i<numDays;i++){
+                    //statement to determine valid variables
+                    if (pop>2&&dayIncr>=0&&numDays>1){
+                        //loop to determine final population after numDays
+                        for(int i=0;i<numDays;i++){
                         counter++;  //increase counter for number of days
                         pop=(pop*dayIncr)+pop;  //calculate increasing population 
                         cout<<"For day "<<counter<<" population is "<<pop<<endl;
-                    }
-                }else{  //telling user to input valid variables
+                        }
+                    }else{  //telling user to input valid variables
                     cout<<"Please enter a population larger than two"<<endl;
                     cout<<"A positive daily population increase"<<endl;
                     cout<<"And a number larger than one for the number of days"<<endl;
-                }
+                    }
+                    cout<<"Would you like to try other conditions? Y or N"<<endl;
+                    cin>>answr;
+                }while(toupper(answr)=='Y');
            }break;
            case 2:{
                //The Problem to solve

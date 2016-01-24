@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     for (int day=2;day<=31;day++){
         salary*=2;
         totPay+=salary;
-        cout<<setw(3)<<day<<setw(15)<<salary/100.0<<setw(15)<<totPay/100.0<<endl;
+        cout<<setw(3)<<day<<setw(15)<<salary/100.0f<<setw(15)<<totPay/100.0f<<endl;
     }
     
     

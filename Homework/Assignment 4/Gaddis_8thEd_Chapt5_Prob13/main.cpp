@@ -7,7 +7,6 @@
 
 //System Libraries
 #include <iostream> //I/O formating
-#include <iomanip>  //Formating 
 using namespace std;
 
 //User Libraries

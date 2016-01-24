@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: Find when Fahrenheit == Celsius 
- * Created on January 20, 2016
+ * Purpose: chart Fahrenheit and Celsius
+ * Created on January 22, 2016
  */
 
 //System Libraries
