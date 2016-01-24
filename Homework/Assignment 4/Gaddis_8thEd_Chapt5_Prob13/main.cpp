@@ -20,7 +20,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Problem to Solve
     cout<<endl<<"Solution to Gaddis 8thEd Chap5 Prob19"<<endl;
- 
+    cout<<"This program calculates if you have gone over budget"<<endl;
     //declare and initialize variables 
     float budgt; //user budget
     float total=0; //accumulator initialized with zero

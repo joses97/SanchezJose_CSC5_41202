@@ -30,11 +30,11 @@ int main(int argc, char** argv) {
     //input number of years this will take place fpr
     cout<<"Please enter the number of years you would"
             " like to see membership prices for"<<endl;
-    cin>>numYear;
+    cin>>numYear;//input number of years this will be calculated for 
     
     //loop for number of years
     for (int i=0;i<numYear;i++){
-        cost=(percInc*cost)+cost;
+        cost=(percInc*cost)+cost;   //calculate the cost of the item 
         cout<<"In "<<i+1<<" years the price will be"
                 " "<<fixed<<showpoint<<setprecision(2)<<cost<<"$"<<endl;
     }

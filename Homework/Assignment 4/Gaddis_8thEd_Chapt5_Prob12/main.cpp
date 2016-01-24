@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
     cout<<"Fahrenheit   Celsius   Celsius"<<endl;
     cout<<fixed<<setprecision(2)<<showpoint;
     for (int f=f1;f<=f2;f++){
-        float ceq=slope*(f+intrcpt);
+        float ceq=slope*(f+intrcpt);  
         float cintrp=c1+static_cast<float>(f-f1)/(f2-f1)*(c2-c1);
         cout<<setw(10)<<f<<setw(10)<<ceq<<setw(10)<<cintrp<<endl;
     }

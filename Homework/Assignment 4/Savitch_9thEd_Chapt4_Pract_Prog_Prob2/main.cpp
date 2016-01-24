@@ -21,7 +21,7 @@ float mileper(float miles, float liters);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Problem explanation
-    cout<<"Solution to Savitch Chapter 3 Practice Problem 1"<<endl;
+    cout<<"Solution to Savitch Chapter 3 Practice Problem 2"<<endl;
     //answer to repeat question 
     unsigned char answr; //answer to repeat question to repeat entire program
     do{

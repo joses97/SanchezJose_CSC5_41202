@@ -42,11 +42,11 @@ int main(int argc, char** argv) {
     if (pop>2&&dayIncr>=0&&numDays>1){
          //loop to determine final population after numDays
         for(int i=0;i<numDays;i++){
-            counter++;
-            pop=(pop*dayIncr)+pop;
+            counter++;  //increase counter for number of days
+            pop=(pop*dayIncr)+pop;  //calculate increasing population 
             cout<<"For day "<<counter<<" population is "<<pop<<endl;
         }
-    }else{
+    }else{  //telling user to input valid variables
         cout<<"Please enter a population larger than two"<<endl;
         cout<<"A positive daily population increase"<<endl;
         cout<<"And a number larger than one for the number of days"<<endl;
