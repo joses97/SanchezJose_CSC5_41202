@@ -20,7 +20,7 @@ float infl(float priceP, float price1);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Problem explanation
-    cout<<"Solution to Savitch Chapter 3 Practice Problem 4"<<endl;
+    cout<<"Solution to Savitch Chapter 3 Practice Problem 5"<<endl;
     //answer to repeat question
     unsigned char answr; //answer to repeat question
     do{
