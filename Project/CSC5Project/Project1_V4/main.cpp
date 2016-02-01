@@ -44,6 +44,9 @@ int main(int argc, char** argv) {
     //set time to 0 for gambling 
     srand(static_cast<unsigned int>(time(0)));
     
+    //output all to 2 decimal places
+    cout<<fixed<<setprecision(2)<<showpoint<<endl;
+    
     //run gambling while user still has money 
     while(totMon>0&&toupper(answr)=='Y'){
         cout<<"Would you like to bet on a number or a color? c/n"<<endl;
@@ -61,6 +64,7 @@ int main(int argc, char** argv) {
         if (toupper(opt1)=='N'){
             cout<<"You selected to play for number"<<endl;
             cout<<"Enter in your guess"<<endl;
+            cout<<"NOTE: input 37 for 0. 38 for 00"<<endl;
             cin>>guess; //input users guess for the roulette wheel
             cout<<"You have $"<<bet<<" on "<<guess<<endl;
             cout<<"Enter ''GO'' to gamble."<<endl;
@@ -97,20 +101,46 @@ int main(int argc, char** argv) {
             }
             //calculate random number from roulette wheel
             winCol=rand()%38+1;
-            cout<<static_cast<int>(winCol)<<endl;
             //if statement to determine 
-            if (((winCol<=36&&winCol>18)&&pick==1)||winCol<=18&&pick==2){
-                cout<<"You've won by placing your bet "<<color<<endl;
-                cout<<"Your pay out is $"<<bet*1.05f<<endl;
-                totMon=totMon+(bet*1.05f); //calculate new balance
-                cout<<"Your new balance is $"<<totMon<<endl;
-                winsC++;
-            }else{
-                cout<<"You've lost by placing it your bet on "<<color<<endl;
-                totMon=totMon-bet;
-                cout<<"Your new balance is $"<<totMon<<endl;
-                lossC++;
-            }}
+            switch (winCol){
+                case 1: case 3: case 5: case 7: case 9: case 12: case 14: case 16:
+                case 18: case 19: case 21: case 23:case 25: case 27: case 30: 
+                case 32: case 34: case 36: {
+                    cout<<"The number is "<<static_cast<int>(winCol)<<endl;
+                    if (pick==2){
+                        totMon=totMon+(bet*1.05f);//calculate new balance
+                        cout<<"Its Red! You won    $"<<bet*1.05f<<endl;
+                        cout<<"Your new balance is $"<<totMon<<endl;
+                        winsC++;    //add one to wins for color
+                    }else if(pick==1){
+                        totMon=totMon-bet;//calculate
+                        cout<<"Its Red! You lost $"<<bet<<endl;
+                        cout<<"Your new balance is $"<<totMon<<endl;
+                        lossC++;    //add one to losses for color                       
+                    }
+                }break;
+                case 37: case 38:{
+                    totMon=totMon-bet;
+                    if (winCol==37){cout<<"The ball landed on 0!"<<endl;}
+                    else if (winCol==38){cout<<"The ball landed on a 00!"<<endl;}
+                    cout<<"You lost $"<<bet<<endl;
+                    lossC++; //add one to losses for color
+                }break;
+                default:{
+                    if(pick==2){
+                        totMon=totMon-bet;
+                        cout<<"Its Black! You lost $"<<bet<<endl;
+                        cout<<"Your new balance is $"<<totMon<<endl;
+                        lossC++;    //increment color losses
+                    }else if(pick==1){
+                        totMon=totMon+(bet*1.05f);
+                        cout<<"Its Black! You won  $"<<bet*1.05f<<endl;
+                        cout<<"Your new balance is $"<<totMon<<endl;
+                        winsC++;    //increment color wins 
+                    }
+                }break;
+            }
+        }
         cout<<"Continue gambling? Y/N"<<endl;
         cin>>answr;
         //calculate some statistics
