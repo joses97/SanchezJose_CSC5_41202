@@ -3,11 +3,11 @@
  * File:   main.cpp
  * Author: Jose Sanchez
  * Purpose: version 3
- * Created on January 22 2016, 2:00PM
+ * Created on January 30 2016, 2:00PM
  */
 
 //System Libraries
-#include <iostream>
+#include <iostream> //IO
 #include <cstdlib>  
 #include <ctime>    //rng
 #include <iomanip>  //formatting
@@ -49,11 +49,14 @@ int main(int argc, char** argv) {
     
     //run gambling while user still has money 
     while(totMon>0&&toupper(answr)=='Y'){
-        cout<<"Would you like to bet on a number or a color? c/n"<<endl;
+        cout<<"Would you like to bet on a number or a color? Number=N  Color=C"<<endl;
         cin>>opt1;
         cout<<"How much money are you putting down on this bet?"<<endl;
         cout<<"The table max per bet is  10,000"<<endl;
         cin>>bet;
+        if (bet>LIMIT){
+            cout<<"Your bet has been changed to the limit"<<endl;
+        }
         bet=bet<LIMIT?bet:LIMIT; //ternary operator, user cant exceed table limit
         if (bet>totMon){
             cout<<"Your bet has been changed to your remaining balance of $"<<totMon<<endl;
@@ -145,9 +148,7 @@ int main(int argc, char** argv) {
         cin>>answr;
         //calculate some statistics
         plays=wins+loss;//counts the number of times user played for numbers
-        playsC=winsC+lossC; //counts the number of times the user played for color
-        
-        
+        playsC=winsC+lossC; //counts the number of times the user played for color  
     }
     cout<<"Displaying your statistic for your bets!"<<endl;
     cout<<"You played a total of "<<wins+loss+winsC+lossC<<" times"<<endl;
