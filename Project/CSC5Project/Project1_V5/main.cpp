@@ -8,10 +8,11 @@
 
 //System Libraries
 #include <iostream> //IO
-#include <cstdlib>  
-#include <ctime>    //rng
+#include <cstdlib>  //rng
+#include <ctime>    //set time 0 
 #include <iomanip>  //formatting
 #include <string>   //strings
+#include <fstream>  //file I/O
 using namespace std;
 
 //User Libraries
@@ -26,20 +27,31 @@ int main(int argc, char** argv) {
     unsigned short guess;           //user's number guess for the wheel
     char opt1;                      //user's choice for color or number bet
     string color;                   //users choice for black or red
-    float totMon;                     //users wallet to spend on gambling 
+    float totMon;                   //users wallet to spend on gambling 
     float bet;                      //users bet for that go around
-    const unsigned int LIMIT=10000; //table limit for a single bet
+    const unsigned int LIMIT=10000, MAX=100000; //table limit for a single bet
     char answr='Y';                 //users answer to keep playing
     unsigned short wins=0, loss=0, plays=0; //counts the number of wins and losses user has
-    unsigned short winsC=0, lossC=0, playsC=0; //counts the number of wins and losses user has for color
+    unsigned short winsC=0, lossC=0, playsC=0;//counts the number of wins and losses user has for color
     string blank; //no purpose, simply makes the user hit enter to begin the roulette ball
     char winCol;                    //the winning color for gambling on a color
     char pick;                      //the numbers the uses gets for choosing a color
+    ofstream outFile;               //outputs to a file
     
+    //output results to a file
+    outFile.open("Stats.txt");      //output to a file named stats.txt
     //input users choice of color and total amount to bet
     cout<<"Welcome to the roulette wheel"<<endl;
     cout<<"How much money do you have to bet tonight? MAX:100,000"<<endl;
     cin>>totMon;
+    
+    //make sure user doesn't over 100k
+    if (totMon>MAX){
+        cout<<"You are only allowed to have $100,000 to bet. "
+                "$100,000 is now your max"<<endl;
+    }
+    //ternary operator 
+    totMon=totMon>MAX?MAX:totMon; //makes sure user cannot go over MAX
     
     //set time to 0 for gambling 
     srand(static_cast<unsigned int>(time(0)));
@@ -53,7 +65,7 @@ int main(int argc, char** argv) {
         cin>>opt1;
         cout<<"How much money are you putting down on this bet?"<<endl;
         cout<<"The table max per bet is  10,000"<<endl;
-        cin>>bet;
+        cin>>bet;   //input the bet amount
         if (bet>LIMIT){
             cout<<"Your bet has been changed to the limit"<<endl;
         }
@@ -79,7 +91,7 @@ int main(int argc, char** argv) {
                 if (guess==roll){
                     cout<<"You've won"<<endl;
                     cout<<"Your pay out is"<<bet*37<<endl;
-                    totMon+=(bet*37);
+                    totMon+=(bet*37);   //calculate the new total amount
                     cout<<"Your remaining balance is $"<<totMon<<endl;
                     wins++; //add 1 to number win
                 }else{
@@ -97,46 +109,47 @@ int main(int argc, char** argv) {
             cin>>color; //input users color choice
             if(toupper(color[0])=='B'){
                 cout<<"You picked Black"<<endl;
-                pick=1;
+                pick=1; //set pick = 1 to represent black 
             }else{
                 cout<<"You Picked Red"<<endl;
-                pick=2;
+                pick=2; //set pick = 2 to represent red
             }
             //calculate random number from roulette wheel
-            winCol=rand()%38+1;
-            //if statement to determine 
+            winCol=rand()%38+1; //determine what number the ball will land on
+            //output the number the ball lands on
+            cout<<"The number is "<<static_cast<int>(winCol)<<endl; 
+            //switch statement to find what each numbers color is 
             switch (winCol){
                 case 1: case 3: case 5: case 7: case 9: case 12: case 14: case 16:
                 case 18: case 19: case 21: case 23:case 25: case 27: case 30: 
                 case 32: case 34: case 36: {
-                    cout<<"The number is "<<static_cast<int>(winCol)<<endl;
-                    if (pick==2){
+                    if (pick==2){ //if pick=2 then then user wins
                         totMon=totMon+(bet*1.05f);//calculate new balance
                         cout<<"Its Red! You won    $"<<bet*1.05f<<endl;
                         cout<<"Your new balance is $"<<totMon<<endl;
                         winsC++;    //add one to wins for color
-                    }else if(pick==1){
+                    }else if(pick==1){  //if pick=1 then user loses
                         totMon=totMon-bet;//calculate
                         cout<<"Its Red! You lost $"<<bet<<endl;
                         cout<<"Your new balance is $"<<totMon<<endl;
                         lossC++;    //add one to losses for color                       
                     }
                 }break;
-                case 37: case 38:{
-                    totMon=totMon-bet;
+                case 37: case 38:{ //37 and 38 represent 0 and 00, user always losses
+                    totMon=totMon-bet; //calculate totMon for a loss
                     if (winCol==37){cout<<"The ball landed on 0!"<<endl;}
                     else if (winCol==38){cout<<"The ball landed on a 00!"<<endl;}
                     cout<<"You lost $"<<bet<<endl;
                     lossC++; //add one to losses for color
                 }break;
                 default:{
-                    if(pick==2){
-                        totMon=totMon-bet;
+                    if(pick==2){    //if pick=2 user loses
+                        totMon=totMon-bet;  //calculate new totMon for loss
                         cout<<"Its Black! You lost $"<<bet<<endl;
                         cout<<"Your new balance is $"<<totMon<<endl;
                         lossC++;    //increment color losses
                     }else if(pick==1){
-                        totMon=totMon+(bet*1.05f);
+                        totMon=totMon+(bet*1.05f);  //calculate new balance for winnings
                         cout<<"Its Black! You won  $"<<bet*1.05f<<endl;
                         cout<<"Your new balance is $"<<totMon<<endl;
                         winsC++;    //increment color wins 
@@ -144,18 +157,37 @@ int main(int argc, char** argv) {
                 }break;
             }
         }
+        //input answr, if yes continue gambling 
         cout<<"Continue gambling? Y/N"<<endl;
         cin>>answr;
         //calculate some statistics
         plays=wins+loss;//counts the number of times user played for numbers
-        playsC=winsC+lossC; //counts the number of times the user played for color       
+        playsC=winsC+lossC; //counts the number of times the user played for color  
     }
     cout<<"Displaying your statistic for your bets!"<<endl;
-    cout<<"You played a total of "<<plays+playsC<<" times"<<endl;
-    cout<<"You played for a color a total of "<<playsC<<" times"<<endl;
-    cout<<"You played for a number a total of "<<plays<<" times"<<endl;
-    cout<<"You won a total of "<<endl;
+    cout<<"You bet a total of "<<plays+playsC<<" times"<<endl;
+    cout<<"You bet on a color a total of "<<playsC<<" times"<<endl;
+    cout<<"You bet on a number a total of "<<plays<<" times"<<endl;
+    cout<<"You won a total of "<<wins+winsC<<" times"<<endl;
+    cout<<"You loss a total of "<<loss+lossC<<" times"<<endl;
+    cout<<"You won on color a total of "<<winsC<<" times"<<endl;
+    cout<<"You won on a number a total of "<<wins<<" times"<<endl;
+    cout<<"You lost on a color a total of "<<lossC<<" times"<<endl;
+    cout<<"You lost on a number a total of "<<loss<<" times"<<endl;
     
+    //output results to a file
+    outFile<<"Displaying your statistic for your bets!"<<endl;
+    outFile<<"You bet a total of "<<plays+playsC<<" times"<<endl;
+    outFile<<"You bet on a color a total of "<<playsC<<" times"<<endl;
+    outFile<<"You bet on a number a total of "<<plays<<" times"<<endl;
+    outFile<<"You won a total of "<<wins+winsC<<" times"<<endl;
+    outFile<<"You loss a total of "<<loss+lossC<<" times"<<endl;
+    outFile<<"You won on color a total of "<<winsC<<" times"<<endl;
+    outFile<<"You won on a number a total of "<<wins<<" times"<<endl;
+    outFile<<"You lost on a color a total of "<<lossC<<" times"<<endl;
+    outFile<<"You lost on a number a total of "<<loss<<" times"<<endl;
+    //close outFile
+    outFile.close();    //close the outfile
     
     //Exit stage right and close
     return 0;
