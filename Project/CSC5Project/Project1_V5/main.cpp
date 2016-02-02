@@ -1,4 +1,3 @@
-
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
@@ -27,12 +26,12 @@ int main(int argc, char** argv) {
     unsigned short guess;           //user's number guess for the wheel
     char opt1;                      //user's choice for color or number bet
     string color;                   //users choice for black or red
-    float totMon;                   //users wallet to spend on gambling 
+    float totMon, totMon1;          //users wallet to spend on gambling, totMon 1 saves original value 
     float bet;                      //users bet for that go around
     const unsigned int LIMIT=10000, MAX=100000; //table limit for a single bet
     char answr='Y';                 //users answer to keep playing
-    unsigned short wins=0, loss=0, plays=0; //counts the number of wins and losses user has
-    unsigned short winsC=0, lossC=0, playsC=0;//counts the number of wins and losses user has for color
+    int wins=0, loss=0, plays=0; //counts the number of wins and losses user has
+    unsigned int  winsC=0, lossC=0, playsC=0;//counts the number of wins and losses user has for color
     string blank; //no purpose, simply makes the user hit enter to begin the roulette ball
     char winCol;                    //the winning color for gambling on a color
     char pick;                      //the numbers the uses gets for choosing a color
@@ -43,7 +42,8 @@ int main(int argc, char** argv) {
     //input users choice of color and total amount to bet
     cout<<"Welcome to the roulette wheel"<<endl;
     cout<<"How much money do you have to bet tonight? MAX:100,000"<<endl;
-    cin>>totMon;
+    cin>>totMon;    //input totMon
+    totMon1=totMon; //set totMon1=totMon so it saves the value for investment later
     
     //make sure user doesn't over 100k
     if (totMon>MAX){
@@ -164,7 +164,18 @@ int main(int argc, char** argv) {
         plays=wins+loss;//counts the number of times user played for numbers
         playsC=winsC+lossC; //counts the number of times the user played for color  
     }
-    cout<<"Displaying your statistic for your bets!"<<endl;
+    //calculate investment for 5 years instead of gambling 
+    cout<<"You had $"<<totMon1<<" to start with and now have $"<<totMon<<endl;
+    if (totMon1>totMon){
+        cout<<"If you were to have invested this money for 5 years at 10% you would have $";
+        for(int i=5;i>0;i--){
+            totMon1=totMon1*0.10f+totMon1;
+        }
+        cout<<totMon1<<endl;
+    }else cout<<"Congrats you beat the house!"<<endl;
+    
+    //output the statistics of the users gambling
+    cout<<endl<<"Displaying your statistic for your bets!"<<endl;
     cout<<"You bet a total of "<<plays+playsC<<" times"<<endl;
     cout<<"You bet on a color a total of "<<playsC<<" times"<<endl;
     cout<<"You bet on a number a total of "<<plays<<" times"<<endl;
