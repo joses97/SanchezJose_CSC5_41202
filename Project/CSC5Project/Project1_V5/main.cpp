@@ -35,6 +35,7 @@ int main(int argc, char** argv) {
     string blank; //no purpose, simply makes the user hit enter to begin the roulette ball
     char winCol;                    //the winning color for gambling on a color
     char pick;                      //the numbers the uses gets for choosing a color
+    char roll;                      //result from the random number generator
     ofstream outFile;               //outputs to a file
     
     //output results to a file
@@ -85,7 +86,7 @@ int main(int argc, char** argv) {
             cout<<"Enter ''GO'' to gamble."<<endl;
             cin>>blank;//doesnt do anything, used to create a pause
             //begin rng for the outcome
-            char roll=rand()%38+1;  //set the random number range 1-38
+            roll=rand()%38+1;  //set the random number range 1-38
             cout<<"The number is "<<static_cast<int>(roll)<<endl; //display number out of the roulette wheel
                 //if they got guess right run 
                 if (guess==roll){
