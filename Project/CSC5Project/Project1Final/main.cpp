@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Jose Sanchez
- * Purpose: version 3
- * Created on January 30 2016, 2:00PM
+ * Purpose: Roulette wheel
+ * Created on February 2nd 2016, 2:00PM
  */
 
 //System Libraries
@@ -194,15 +194,15 @@ int main(int argc, char** argv) {
     cout<<"You lost on a number a total of "<<loss<<" times"<<endl;
     
     //output results to a file
-    outFile<<"Displaying your statistic for your bets!"<<endl;
-    outFile<<"You bet a total of "<<plays+playsC<<" times"<<endl;
-    outFile<<"You bet on a color a total of "<<playsC<<" times"<<endl;
-    outFile<<"You bet on a number a total of "<<plays<<" times"<<endl;
-    outFile<<"You won a total of "<<wins+winsC<<" times"<<endl;
-    outFile<<"You loss a total of "<<loss+lossC<<" times"<<endl;
-    outFile<<"You won on color a total of "<<winsC<<" times"<<endl;
-    outFile<<"You won on a number a total of "<<wins<<" times"<<endl;
-    outFile<<"You lost on a color a total of "<<lossC<<" times"<<endl;
+    outFile<<endl<<"Displaying your statistic for your bets!"<<endl;
+    outFile<<"You bet a total of "<<setw(14)<<plays+playsC<<" times"<<endl;
+    outFile<<"You bet on a color a total of   "<<playsC<<" times"<<endl;
+    outFile<<"You bet on a number a total of  "<<plays<<" times"<<endl;
+    outFile<<"You won a total of "<<setw(14)<<wins+winsC<<" times"<<endl;
+    outFile<<"You loss a total of "<<setw(13)<<loss+lossC<<" times"<<endl;
+    outFile<<"You won on color a total of "<<setw(5)<<winsC<<" times"<<endl;
+    outFile<<"You won on a number a total of  "<<wins<<" times"<<endl;
+    outFile<<"You lost on a color a total of  "<<lossC<<" times"<<endl;
     outFile<<"You lost on a number a total of "<<loss<<" times"<<endl;
     //close outFile
     outFile.close();    //close the outfile
