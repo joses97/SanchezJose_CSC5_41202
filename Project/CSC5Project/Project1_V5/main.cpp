@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
     cin>>totMon;    //input totMon
     totMon1=totMon; //set totMon1=totMon so it saves the value for investment later
     
-    //make sure user doesn't over 100k
+    //if statement to make sure user doesn't over 100k
     if (totMon>MAX){
         cout<<"You are only allowed to have $100,000 to bet. "
                 "$100,000 is now your max"<<endl;
@@ -59,17 +59,19 @@ int main(int argc, char** argv) {
     //output all to 2 decimal places
     cout<<fixed<<setprecision(2)<<showpoint<<endl;
     
-    //run gambling while user still has money 
+    //run gambling while user still has money and answr=='Y'
     while(totMon>0&&toupper(answr)=='Y'){
         cout<<"Would you like to bet on a number or a color? Number=N  Color=C"<<endl;
-        cin>>opt1;
+        cin>>opt1;  //input opt1
         cout<<"How much money are you putting down on this bet?"<<endl;
         cout<<"The table max per bet is  10,000"<<endl;
         cin>>bet;   //input the bet amount
+        //if statement to determine if bet>limit
         if (bet>LIMIT){
             cout<<"Your bet has been changed to the limit"<<endl;
         }
         bet=bet<LIMIT?bet:LIMIT; //ternary operator, user cant exceed table limit
+        // if statement to determine if bet>totMon
         if (bet>totMon){
             cout<<"Your bet has been changed to your remaining balance of $"<<totMon<<endl;
         }
@@ -90,14 +92,15 @@ int main(int argc, char** argv) {
                 //if they got guess right run 
                 if (guess==roll){
                     cout<<"You've won"<<endl;
-                    cout<<"Your pay out is"<<bet*37<<endl;
+                    cout<<"Your pay out is"<<bet*37<<endl;  //output bet*37
                     totMon+=(bet*37);   //calculate the new total amount
-                    cout<<"Your remaining balance is $"<<totMon<<endl;
+                    cout<<"Your remaining balance is $"<<totMon<<endl;  //output totMon
                     wins++; //add 1 to number win
+                //else
                 }else{
                     cout<<"you lose!"<<endl;
-                    cout<<"You lost $"<<bet<<" on this gamble"<<endl;
-                    totMon=totMon-bet;  //calculate remaining balance 
+                    cout<<"You lost $"<<bet<<" on this gamble"<<endl;   //output bet amount
+                    totMon=totMon-bet;  //output totMon amount
                     cout<<"Your remaining balance is $"<<totMon<<endl;
                     loss++; //add 1 to number loss
                 }
@@ -107,51 +110,53 @@ int main(int argc, char** argv) {
             cout<<"You picked to gamble on a color"<<endl;
             cout<<"Please enter the color Black or Red"<<endl;
             cin>>color; //input users color choice
+            //if color is black 
             if(toupper(color[0])=='B'){
                 cout<<"You picked Black"<<endl;
                 pick=1; //set pick = 1 to represent black 
+            //else
             }else{
                 cout<<"You Picked Red"<<endl;
                 pick=2; //set pick = 2 to represent red
             }
             //calculate random number from roulette wheel
-            winCol=rand()%38+1; //determine what number the ball will land on
+            winCol=rand()%38+1; //determine what number the ball will land on winCol=rand()%38+1
             //output the number the ball lands on
             cout<<"The number is "<<static_cast<int>(winCol)<<endl; 
             //switch statement to find what each numbers color is 
-            switch (winCol){
+            switch (winCol){    //switch case for red result
                 case 1: case 3: case 5: case 7: case 9: case 12: case 14: case 16:
                 case 18: case 19: case 21: case 23:case 25: case 27: case 30: 
                 case 32: case 34: case 36: {
                     if (pick==2){ //if pick=2 then then user wins
                         totMon=totMon+(bet*1.05f);//calculate new balance
-                        cout<<"Its Red! You won    $"<<bet*1.05f<<endl;
-                        cout<<"Your new balance is $"<<totMon<<endl;
+                        cout<<"Its Red! You won    $"<<bet*1.05f<<endl; //output bet*1.05f
+                        cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
                         winsC++;    //add one to wins for color
                     }else if(pick==1){  //if pick=1 then user loses
-                        totMon=totMon-bet;//calculate
-                        cout<<"Its Red! You lost $"<<bet<<endl;
-                        cout<<"Your new balance is $"<<totMon<<endl;
+                        totMon=totMon-bet;//calculate totMon
+                        cout<<"Its Red! You lost $"<<bet<<endl; //output bet
+                        cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
                         lossC++;    //add one to losses for color                       
                     }
-                }break;
+                }break; //cases for a definite loss
                 case 37: case 38:{ //37 and 38 represent 0 and 00, user always losses
                     totMon=totMon-bet; //calculate totMon for a loss
                     if (winCol==37){cout<<"The ball landed on 0!"<<endl;}
                     else if (winCol==38){cout<<"The ball landed on a 00!"<<endl;}
-                    cout<<"You lost $"<<bet<<endl;
+                    cout<<"You lost $"<<bet<<endl;  //output bet
                     lossC++; //add one to losses for color
                 }break;
-                default:{
-                    if(pick==2){    //if pick=2 user loses
+                default:{ //default statement for ball landing on black
+                    if(pick==2){    //if pick==2 user loses
                         totMon=totMon-bet;  //calculate new totMon for loss
-                        cout<<"Its Black! You lost $"<<bet<<endl;
-                        cout<<"Your new balance is $"<<totMon<<endl;
+                        cout<<"Its Black! You lost $"<<bet<<endl; //output bet
+                        cout<<"Your new balance is $"<<totMon<<endl;  //output totMon
                         lossC++;    //increment color losses
-                    }else if(pick==1){
+                    }else if(pick==1){  //if pick ==1 user wins
                         totMon=totMon+(bet*1.05f);  //calculate new balance for winnings
-                        cout<<"Its Black! You won  $"<<bet*1.05f<<endl;
-                        cout<<"Your new balance is $"<<totMon<<endl;
+                        cout<<"Its Black! You won  $"<<bet*1.05f<<endl; //calculate bet*1.05f
+                        cout<<"Your new balance is $"<<totMon<<endl;    //calculate totMon
                         winsC++;    //increment color wins 
                     }
                 }break;
@@ -159,19 +164,21 @@ int main(int argc, char** argv) {
         }
         //input answr, if yes continue gambling 
         cout<<"Continue gambling? Y/N"<<endl;
-        cin>>answr;
+        cin>>answr; //input answr
         //calculate some statistics
         plays=wins+loss;//counts the number of times user played for numbers
         playsC=winsC+lossC; //counts the number of times the user played for color  
     }
-    //calculate investment for 5 years instead of gambling 
+    //output totMon1 and totMon
     cout<<"You had $"<<totMon1<<" to start with and now have $"<<totMon<<endl;
-    if (totMon1>totMon){
+    //if totMon1>totMon calculate investment for 5 years instead of gambling 
+    if (totMon1>totMon){  
         cout<<"If you were to have invested this money for 5 years at 10% you would have $";
-        for(int i=5;i>0;i--){
-            totMon1=totMon1*0.10f+totMon1;
+        //loop the calculate interest over 5 years
+        for(int i=5;i>0;i--){   //for loop
+            totMon1=totMon1*0.10f+totMon1; //calculate interest at 10 percent for 5 years
         }
-        cout<<totMon1<<endl;
+        cout<<totMon1<<endl;    //output totMon1
     }else cout<<"Congrats you beat the house!"<<endl;
     
     //output the statistics of the users gambling
