@@ -16,19 +16,15 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-float ftToIn(int feet, int inches);
-
+float input(int& feet, int& inches);
+float ftToMe(int& feet, int& inches);
+float ftToCm(int& feet, int& inches);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables  
-    int feet, inches; //feet and inches 
-    //Input the feet and inches
-    cout<<"Savitch 9thEd Chaoter 5 Practice Rroblem 2"<<endl;
-    cout<<"This program will convert feet and inches to meters and centimeters"<<endl;
-    cout<<"Please input the feet and inches separated by a space"<<endl;
-    cin>>feet>>inches;
-    cout<<ftToIn(feet, inches)<<endl;
-    
+    int feet=0, inches=0;
+    input(feet, inches);
+
     
     //Exit stage right and close
     return 0;
@@ -36,7 +32,25 @@ int main(int argc, char** argv) {
 //******************************************************************************
 //****************************Convert feet to inches****************************
 //******************************************************************************
-float ftToIn(int feet, int inches){
+float ftToMe(int& feet, int& inches){
     int inch=feet*12+inches;
-    return inch;
+    int meter=inch/39.3701f;
+    return meter;
+    
+}
+//******************************************************************************
+//****************************Convert inches to meters**************************
+//******************************************************************************
+float ftToCm(int& feet, int& inches){
+    int inch=feet*12+inches;
+    float meter=inch/39.3701f;
+    float centi=(meter-ftToMe(feet, inches))*100;
+    return centi;
+}
+//******************************************************************************
+//****************************Convert inches to meters**************************
+//******************************************************************************
+float input(int& feet, int& inches){
+    cout<<"Input the feet and inches seperated by a space"<<endl;
+    cin>>feet>>inches;
 }

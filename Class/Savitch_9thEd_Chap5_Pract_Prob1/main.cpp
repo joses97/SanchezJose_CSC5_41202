@@ -66,6 +66,6 @@ float stdDev(float v1, float v2, float v3, float v4){
     float sqr, dev;
     sqr=pow((v1-avg(v1,v2,v3,v4)),2)+pow((v2-avg(v1,v2,v3,v4)),2)+
             pow((v3-avg(v1,v2,v3,v4)),2)+pow((v4-avg(v1,v2,v3,v4)),2);
-    dev=sqr/3.0f;
+    dev=sqrt(sqr/3.0f);
     return dev;
 }
