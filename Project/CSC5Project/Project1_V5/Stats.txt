@@ -1,10 +1,10 @@
 Displaying your statistic for your bets!
-You bet a total of 3 times
-You bet on a color a total of 2 times
+You bet a total of 1 times
+You bet on a color a total of 0 times
 You bet on a number a total of 1 times
-You won a total of 2 times
+You won a total of 0 times
 You loss a total of 1 times
-You won on color a total of 2 times
+You won on color a total of 0 times
 You won on a number a total of 0 times
 You lost on a color a total of 0 times
 You lost on a number a total of 1 times
