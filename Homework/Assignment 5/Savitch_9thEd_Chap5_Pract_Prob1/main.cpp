@@ -6,9 +6,8 @@
  */
 
 //System Libraries
-#include <iostream>
-
-#include <cmath>
+#include <iostream>//i/o
+#include <cmath>//power function 
 using namespace std;
 
 //User Libraries

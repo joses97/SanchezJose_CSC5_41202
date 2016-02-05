@@ -333,7 +333,7 @@ float ounces6(int kilos, int grams){
 //***********************output the results*************************************
 //******************************************************************************
 void output6(int kilos, int grams){
-    cout<<"You entered"<<kilos<<" kilograms and "<<grams<<" grams"<<endl;
+    cout<<"You entered "<<kilos<<" kilograms and "<<grams<<" grams"<<endl;
     cout<<"This translates to "<<pound6(kilos, grams)<<" pounds and"
             " "<<ounces6(kilos, grams)<<" ounces"<<endl;
 }
