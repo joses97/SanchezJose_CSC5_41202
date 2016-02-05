@@ -72,7 +72,7 @@ float grams5(int lbs, int oz){
 //******************************************************************************
 //***********************output all to user*************************************
 //******************************************************************************
-void output4(int lbs,int oz){
+void output5(int lbs,int oz){
     cout<<"You have "<<lbs<<" pounds and "<<oz<<" ounces "<<endl;
     cout<<"This is equivalent to "<<kilos5(lbs, oz)<<" kilos and"
             " "<<grams5(lbs, oz)<<" grams"<<endl;
