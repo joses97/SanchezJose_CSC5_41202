@@ -8,8 +8,6 @@
 
 //System Libraries
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 
 //User Libraries
