@@ -6,8 +6,8 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <iomanip>
+#include <iostream> //I/O
+#include <iomanip>  //formatting
 using namespace std;
 
 //User Libraries
@@ -25,8 +25,12 @@ int main(int argc, char** argv) {
     float total=0.0f;           //total amount of food the monkeys consumed
     float least=0.0f;           //least amount of food eaten by a monkey
     float most=0.0f;            //most amount of food eaten by a monkey
-    int low;
-    int high;
+    int low;                    //high 
+    int high;                   //low
+    
+    //explain program
+    cout<<"Gaddis 8thEd Chapter 7 Probelm 5 "<<endl;
+    cout<<"This program reads the food of monkeys and find the average eaten per day"<<endl; 
     
     //set output to 2 decimal places
     cout<<fixed<<setprecision(2)<<showpoint<<endl;
@@ -46,20 +50,20 @@ int main(int argc, char** argv) {
         }
     }
     //output the average food per day
-    cout<<"The average amount of food eaten per day was"<<total/DAYS<<endl;
+    cout<<"The average amount of food eaten per day was "<<total/DAYS<<endl;
     
-    //set the min and max to the intial arrays
+    //set the min and max to the initial arrays
     least=array[0][0];
     most=array[0][0];
     
     //find the least amount of food eaten
     for(int a=0; a<MNKYS; a++){
         for(int b=0; b<DAYS; b++){
-            if(array[a][b]>most){
+            if(array[a][b]>=most){
                 most=array[a][b];
                 high=a+1;
             }
-            if(array[a][b]<least){
+            if(array[a][b]<=least){
                 least=array[a][b];
                 low=a+1;
             }

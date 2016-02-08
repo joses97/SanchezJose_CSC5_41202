@@ -6,10 +6,7 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <iomanip>
+#include <iostream> //input output
 using namespace std;
 
 //User Libraries
@@ -30,6 +27,7 @@ int main(int argc, char** argv) {
     int results=0;    //result from the bin search
     
     //explain program
+    cout<<"Gaddis 8thEd Chapter 8 problem 4"<<endl;
     cout<<"This program test to see of an input is in the database"<<endl;
     //input the users number
     cout<<"Enter a number: ";
@@ -44,12 +42,15 @@ int main(int argc, char** argv) {
     if(results==-1){
         cout<<"The value was not found"<<endl;
     }else{
-        cout<<"The value "<<input<<" was found at index  "<<results<<endl;
+        cout<<"The value "<<input<<" was found at index "
+                ": "<<results<<" after the sort"<<endl;
     }
     
     return 0;
 }
-//SORT THE ARRAY
+//******************************************************************************
+//*******************************Sort the array*********************************
+//******************************************************************************
 void Sort(int array[], int size){
     int srtScan, minIndx, minVal;
     for (srtScan = 0; srtScan < (size-1); srtScan++){
@@ -65,7 +66,9 @@ void Sort(int array[], int size){
         array[srtScan] = minVal;
     }
  }
-//USER BINARY SEARCH 
+//******************************************************************************
+//*******************************Binary Search**********************************
+//******************************************************************************
 int binSrch(const int array[], int size, int value){
     int first=0;        //first array element 
     int last=size-1;    //last array element

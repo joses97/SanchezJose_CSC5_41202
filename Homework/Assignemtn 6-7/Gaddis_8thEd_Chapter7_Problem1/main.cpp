@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
     int max=0;          //highest number in the array
     
     //explaining the program
-    cout<<"This "
+    cout<<"Solution to Gaddis 8thEd Chapter 7 Problem 1"<<endl;
     cout<<"This program finds the minimun and maximum of 10 whole numbers"<<endl;
     //tell user to input 10 variables
     for (int i=0; i<SIZE; i++){

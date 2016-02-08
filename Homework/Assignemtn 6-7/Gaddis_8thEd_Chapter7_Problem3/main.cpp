@@ -6,9 +6,9 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include <iostream> //input output
+#include <string>   //strings
+#include <iomanip>  //formatting
 using namespace std;
 
 //User Libraries
@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
     string low;          //lowest salsa seller
     
     //explain program
-    cout<<"Gaddis 8thEd Chapter 6 Problem 3"<<endl;
+    cout<<"Gaddis 8thEd Chapter 7 Problem 3"<<endl;
     cout<<"This program takes the sales of salsa and finds the total sales as "
             "well as the highest and lowest selling salsa"<<endl;
     
@@ -62,6 +62,7 @@ int main(int argc, char** argv) {
         }
     }
     
+    //output total, high, max, low, min
     cout<<"The sales for the year was "<<total<<endl;
     cout<<"The Salsa with the highest sales was "<<high<<" with "<<max<<endl;
     cout<<"The Salsa with the lowest sales was "<<low<<" with "<<min<<endl;

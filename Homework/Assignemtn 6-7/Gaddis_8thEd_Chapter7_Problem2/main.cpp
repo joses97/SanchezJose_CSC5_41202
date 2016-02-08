@@ -6,9 +6,9 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include <iostream> //i/o
+#include <string>   //strings
+#include <iomanip>  //formatting
 using namespace std;
 
 //User Libraries
@@ -30,6 +30,9 @@ int main(int argc, char** argv) {
     float max=0.0f;     //highest rainfall for the year
     string high;         //highest month rainfall
     string low;          //lowest month rainfall
+    
+    cout<<"Gaddis 8thEd Chapter 7 Problem 2"<<endl;
+    cout<<"This program take average rainfall and find the average, low, and high "<<endl;
     
     //set decimal places to 2
     cout<<fixed<<setprecision(2)<<showpoint<<endl;

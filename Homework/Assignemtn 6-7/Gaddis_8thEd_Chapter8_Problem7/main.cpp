@@ -6,9 +6,8 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <string>
-#include <iomanip>
+#include <iostream> //i/o
+#include <string> //strings
 using namespace std;
 
 //User Libraries
@@ -16,14 +15,14 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-void sort(string [], int);
-void showArr(string [], int);
-int binSrch(string [], int, string);
+void sort(string [], int);  //sort strings
+void showArr(string [], int);   //show array of strings
+int binSrch(string [], int, string);    //binary search for strings
 //Execution Begins Here
 int main(int argc, char** argv) {
-    const int SIZE = 20;
+    const int SIZE = 20;    //max size for the array
     string input;   //users input
-    int result;
+    int result; //result of the binary search 
     string names[SIZE] = {"Collins, Bill", "Smith, Bart", "Allen, Jim",
         "Griffin, Jim", "Stamey, Marty", "Rose, Geri",
         "Taylor, Terri", "Johnson, Jill",
@@ -31,8 +30,9 @@ int main(int argc, char** argv) {
         "James, Jean", "Weaver, Jim", "Pore, Bob",
         "Rutherford, Greg", "Javens, Renee",
         "Harrison, Rose", "Setzer, Cathy",
-        "Pike, Gordon", "Sanchez, Jose" };
-    //input
+        "Pike, Gordon", "Sanchez, Jose" };  //values for the array
+    
+    //input the name 
     cout<<"Please enter the name you are looking for: ";
     getline(cin, input);
     
@@ -53,7 +53,9 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-//sort the strings
+//******************************************************************************
+//*******************************sort function**********************************
+//******************************************************************************
 void sort(string array[], int size){
     int srtScan, minIndx;
     string minVal;
@@ -70,13 +72,17 @@ void sort(string array[], int size){
         array[srtScan] = minVal;
     }
  }
-//show the array
+//******************************************************************************
+//*******************************show array*************************************
+//******************************************************************************
 void showArr(string arry[], int size){
     for(int i=0; i<size; i++){
         cout<<arry[i]<<endl;
     }
 }
-//binary search 
+//******************************************************************************
+//******************************Binary search***********************************
+//******************************************************************************
 int binSrch(string array[], int size, string input){
     int first=0;        //first array element 
     int last=size-1;    //last array element

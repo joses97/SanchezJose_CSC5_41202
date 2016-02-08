@@ -28,6 +28,8 @@ int main(int argc, char** argv) {
     int wrong=0;        //counter for wrong
     
     //input users answers
+    cout<<"Gaddis 8thEd Chapter 7 Problem 10"<<endl;
+    cout<<"This program check if a users answers to see if they got passed a test"<<endl;
     cout<<"Please enter the answers from the test taker"<<endl;
     //for loop gets users inputs and calculates counts the correct and wrong
     for(int i=0; i<MAX; i++){

@@ -16,11 +16,11 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-void sort(string [], int);
-void showArr(string [], int);
+void sort(string [], int);  //sort function for strings
+void showArr(string [], int);   //show array function for strings
 //Execution Begins Here
 int main(int argc, char** argv) {
-    const int SIZE = 20;
+    const int SIZE = 20; //max size for the array 
     string names[SIZE] = {"Collins, Bill", "Smith, Bart", "Allen, Jim",
         "Griffin, Jim", "Stamey, Marty", "Rose, Geri",
         "Taylor, Terri", "Johnson, Jill",
@@ -28,7 +28,11 @@ int main(int argc, char** argv) {
         "James, Jean", "Weaver, Jim", "Pore, Bob",
         "Rutherford, Greg", "Javens, Renee",
         "Harrison, Rose", "Setzer, Cathy",
-        "Pike, Gordon", "Holland, Beth" };
+        "Pike, Gordon", "Holland, Beth" };  //set array values
+    //explain program 
+    cout<<"Gaddis 8thEd Chapter 8 Problem 6"<<endl;
+    cout<<"This program takes the array values and sorts them"<<endl;
+    
     //sort the array
     sort(names, SIZE);
     
@@ -39,7 +43,9 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-//sort the strings
+//******************************************************************************
+//*******************************sort function**********************************
+//******************************************************************************
 void sort(string array[], int size){
     int srtScan, minIndx;
     string minVal;
@@ -56,7 +62,9 @@ void sort(string array[], int size){
         array[srtScan] = minVal;
     }
  }
-//show the array
+//******************************************************************************
+//*******************************show array function****************************
+//******************************************************************************
 void showArr(string arry[], int size){
     for(int i=0; i<size; i++){
         cout<<arry[i]<<endl;

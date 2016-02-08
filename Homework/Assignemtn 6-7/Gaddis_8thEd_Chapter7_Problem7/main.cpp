@@ -6,9 +6,9 @@
  */
 
 //System Libraries
-#include <iostream>
-#include <fstream>
-#include <string>
+#include <iostream> //input output
+#include <fstream>  //file input
+#include <string>   //strings
 using namespace std;
 
 //User Libraries
@@ -20,14 +20,18 @@ using namespace std;
 //Execution Begins Here
 int main(int argc, char** argv) {
     //declare and initialize variables
-    ifstream inFile;
-    string file;
-    const int MAX=10;
-    int array[MAX];
-    int numFile; // read number from file 
-    int counter = 0; 
-    int tot=0;
-    int high, low;
+    ifstream inFile;    //infile
+    string file;        //name of file being taken in
+    const int MAX=10;   //max for array
+    int array[MAX];     //array
+    int numFile;        //read number from file 
+    int counter=0;      //set counter equal to zero
+    int tot=0;          //set the total equal to zero
+    int high, low;      //high and low 
+    
+    //explain program
+    cout<<"Gaddis 8thEd Chapter 7 Problem  7"<<endl;
+    cout<<"This program reads in a users input and outputs the file and averages"<<endl;
     
     //input the file name
     cout<<"Please input the file name fr.txt"<<endl;

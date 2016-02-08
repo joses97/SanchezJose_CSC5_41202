@@ -9,6 +9,7 @@
 #include <iostream> //I/O
 #include <iomanip>  //used for precision in decimals
 #include <cmath>    //power function
+#include <fstream>  //file i/o
 using namespace std;
 
 //User Libraries
@@ -16,40 +17,22 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-//problem1
 void problem1();
-float showRes(float v1, float v2, float v3, float v4); //shows results of the calculations
-float avg(float v1, float v2, float v3, float v4);      //calculates the average of the inputs
-float stdDev(float v1, float v2, float v3, float v4);   //calculates the standard deviation
-
-//problem 2
 void problem2();
-int input2(int& feet, int& inches); //user inputs the feet and inches
-int ftToMe2(int feet, int inches); //converts feet and inches to meters and centimeters
-float meToCm2(int feet, int inches); //calculates the centimeters 
-void output2(int feet, int inches);  //outputs the results
-
-//problem 3
 void problem3();
-void input3(int& meters, int& centi);//input
-int calcCm3(int meters, int centi);  //calculate centimeters
-int cmToft3(int meters, int centi);  //calculate feet
-float ftToInc3(int meters, int centi);   //calculate the inches
-void output3(int meters, int centi);     //output the results
-//problem 4
 void problem4();
-void input5(int& lbs, int& oz);  //user inputs pounds and ounces
-int ounce5(int lbs, int oz);     //calculates total ounces
-int kilos5(int lbs, int oz);     //calculates total amount of kilograms
-float grams5(int lbs, int oz);   //calculates total amount of grams
-void output5(int lbs,int oz);    //outputs results
-//problem 5
 void problem5();
-void input6(int& kilos, int& grams); //inputs the amount of grams and kilos
-int grams6(int kilos,int grams); //calculate grams
-int pound6(int kilos, int grams); //calculate pounds
-float ounces6(int kilos, int grams); //calculate ounces
-void output6(int kilos, int grams);//output the results
+void problem6();
+void problem7();
+void problem8();
+void problem9();
+void problem10();
+void problem11();
+void problem12();
+void problem13();
+void problem14();
+void problem15();
+
 //Execution Begins Here
 int main(int argc, char** argv) {
     //Declare and initialize variables 
@@ -64,6 +47,15 @@ int main(int argc, char** argv) {
         cout<<"Type 3 to Display the Third Problem "<<endl;
         cout<<"Type 4 to Display the Fourth Problem "<<endl;
         cout<<"Type 5 to Display the Fifth Problem "<<endl;
+        cout<<"Type 6 to Display the First Problem "<<endl;
+        cout<<"Type 7 to Display the Second Problem "<<endl;
+        cout<<"Type 8 to Display the Third Problem "<<endl;
+        cout<<"Type 9 to Display the Fourth Problem "<<endl;
+        cout<<"Type 10 to Display the Fifth Problem "<<endl;
+        cout<<"Type 11 to Display the First Problem "<<endl;
+        cout<<"Type 12 to Display the Second Problem "<<endl;
+        cout<<"Type 13 to Display the Third Problem "<<endl;
+        cout<<"Type 14 to Display the Fourth Problem "<<endl;
         cout<<"Type anything else to exit"<<endl<<endl;
         cin>>nSoltn;
        //Solution to all the problems
@@ -73,6 +65,15 @@ int main(int argc, char** argv) {
            case 3: {problem3();}break;
            case 4: {problem4();}break;
            case 5: {problem5();}break;
+           case 6: {problem6();}break;
+           case 7: {problem7();}break;
+           case 8: {problem8();}break;
+           case 9: {problem9();}break;
+           case 10: {problem10();}break;
+           case 11: {problem11();}break;
+           case 12: {problem12();}break;
+           case 13: {problem13();}break;
+           case 14: {problem14();}break;
            default : cout<<""<<endl;
        }
        cout<<"Would you like to see another problem?"<<endl;
@@ -85,255 +86,378 @@ int main(int argc, char** argv) {
 *****************************************************************
 */
 void problem1(){
-    //Declare and initialize variables
-    float var1, var2, var3, var4; //varibales 1 2 3 and 4 for users input
-    float avrg;                  //average score for the student
-    float stdDev;               //standard deviation of the users inouts
+    //declare and initialize variables
+    const int SIZE=10;  //size of the array
+    int number[SIZE];  //array
+    int min=0;          //smallest number
+    int max=0;          //highest number in the array
     
+    //explaining the program
+    cout<<"Solution to Gaddis 8thEd Chapter 7 Problem 1"<<endl;
+    cout<<"This program finds the minimun and maximum of 10 whole numbers"<<endl;
+    //tell user to input 10 variables
+    for (int i=0; i<SIZE; i++){
+        cout<<"Please enter number: "<<i+1<<endl;
+        cin>>number[i];
+    } 
     
-    //input var1, var2, var3, var4
-    cout<<"Savitch 9thEd Chapter 5 Practice Problem 1"<<endl;
-    cout<<"This program caculates the average and the standard deviation of four inputs"<<endl;
-    cout<<"Please enter the four numbers, each separated by a space"<<endl;
-    cin>>var1>>var2>>var3>>var4;    //input the four variables
-    showRes(var1, var2, var3, var4);
-}
-//345678901234567890123456789012345678901234567890123456789012345678901234567890
-//Inputs:
-//v1->first score
-//v2->second score
-//v3->third score
-//v4->fourth score
-float showRes(float v1, float v2, float v3, float v4){
-    cout<<"The average is "<<avg(v1, v2, v3, v4)<<endl;;    //output avg
-    cout<<"The standard deviation is "<<stdDev(v1, v2, v3, v4)<<endl;   //output standard deviation
-}
-//******************************************************************************
-//****************************Calculate Average********************************
-//******************************************************************************
-float avg(float v1, float v2, float v3, float v4){
-    float avrg=(v1+v2+v3+v4)/4.0f;  //find the average
-    return avrg;                    //return the average
-}
-//******************************************************************************
-//***********************Calculate Standard Deviation***************************
-//******************************************************************************
-float stdDev(float v1, float v2, float v3, float v4){
-    float sqr, dev;     //find the standard deviation 
-    sqr=pow((v1-avg(v1,v2,v3,v4)),2)+pow((v2-avg(v1,v2,v3,v4)),2)+
-            pow((v3-avg(v1,v2,v3,v4)),2)+pow((v4-avg(v1,v2,v3,v4)),2);
-    dev=sqrt(sqr/3.0f);
-    return dev;
+    //set min and max equal to first number
+    min=number[0];
+    max=number[0];
+    
+    //for loop to find smallest number and largest number
+    for (int i=0;i<SIZE;i++){
+        if(number[i]<min){
+            min=number[i];
+        }
+        if(number[i]>max){
+            max=number[i];
+        }
+    }
+    
+    //output the smallest and largest number
+    cout<<"The smallest number is "<<min<<endl;
+    cout<<"The largest number is  "<<max<<endl;
 }
 /****************************************************************
 **************************Problem2*******************************
 *****************************************************************
 */
 void problem2(){
-    //Declare and initialize variables  
-    int feet=0, inches=0; //feet and inches
+    const int MAX=20;   //array limit
+    char corr[MAX]{'A', 'D', 'B', 'B', 'C', 'B', 'A', 'B', 'C', 'D', 'A', 'C',
+                    'D', 'B', 'D', 'C', 'C', 'A', 'D', 'B'};     //correct answers
+    char answer[MAX];   //users answer
+    int cor=0;          //counter for correct
+    int wrong=0;        //counter for wrong
     
-    //set decimal place output to 3
-    cout<<fixed<<setprecision(2)<<showpoint<<endl;
-    cout<<"Savitch 9thEd Chapter 5 Problem 2"<<endl;
-    cout<<"This program will convert feet and inches to meters and centimeters"<<endl;
-    input2(feet, inches); //user inputs the feet and inches
-    output2(feet, inches);            //output the results
-}
-//******************************************************************************
-//***************************input***********************************************
-//******************************************************************************
-int input2(int& feet, int& inches){
-    cout<<"Please input the feet and inches separated by a space"<<endl;
-    cin>>feet>>inches;
-}
-//******************************************************************************
-//****************************calculate meters *********************************
-//******************************************************************************
-int ftToMe2(int feet, int inches){
-    int totImp=feet*12+inches;      //calculate total number of inches
-    int meters=totImp/39.3701f;   //calculates the number of meters
-    return meters;
-}
-//******************************************************************************
-//****************************calculate centimeters*****************************
-//******************************************************************************
-float ftToCm2(int feet, int inches){
-    float totImp=feet*12+inches;      //calculate total number of inches
-    float meters=totImp/39.3701f;   //calculates the number of meters
-    float centi=(meters-ftToMe2(feet, inches))*100;
-    return centi;
-}
-//******************************************************************************
-//****************************output the results********************************
-//******************************************************************************
-void output2(int feet, int inches){
-    //output the feet and inches, and meters and centimeters
-    cout<<"You had "<<feet<<" feet and "<<inches<<" inches"<<endl;
-    cout<<"This converts to "<<ftToMe2(feet, inches)<<" meters and "
-            ""<<ftToCm2(feet, inches)<<" centimeters"<<endl;
+    //input users answers
+    cout<<"Gaddis 8thEd Chapter 7 Problem 10"<<endl;
+    cout<<"This program check if a users answers to see if they got passed a test"<<endl;
+    cout<<"Please enter the answers from the test taker"<<endl;
+    //for loop gets users inputs and calculates counts the correct and wrong
+    for(int i=0; i<MAX; i++){
+        cout<<"Enter the answer for "<<i+1<<endl;
+        cin>>answer[i];     //input answer 
+        while(toupper(answer[i])<'A'||toupper(answer[i])>'D'){
+           cout << "enter another letter: ";
+           cin >> answer[i];}
+        //if statement to find wrong and correct
+        if(toupper(answer[i])==corr[i]){cor++;}
+        else{wrong++;}
+    }
+    cout<<"The number correct was:"<<cor<<endl;
+    cout<<"The number incorrect was:"<<wrong<<endl;
+    //test if user passed of failed
+    if(cor>=15){
+        cout<<"You passed"<<endl;
+    }else{cout<<"You failed"<<endl;}
 }
 /****************************************************************
 **************************Problem3*******************************
 *****************************************************************
 */
 void problem3(){
-    //Declare and initialize variables 
-    int meters=0, centi=0;//the initial amount of meters and centimeters
+    //declare and initialize variables
+    const int SIZE=12;  //size of the array
+    float rain[SIZE];   //array for rain fall
+    string month[SIZE] = {"January", "February", "March", "April", "May", "June"
+    , "July", "August", "September", "October", "November", "December"};
+    float total=0.0f;   //total amount of rainfall
+    float avg;          //average rainfall for the year
+    float min=0.0f;     //lowest rainfall
+    float max=0.0f;     //highest rainfall for the year
+    string high;         //highest month rainfall
+    string low;          //lowest month rainfall
     
-    //set all out puts to two decimal places
+    cout<<"Gaddis 8thEd Chapter 7 Problem 2"<<endl;
+    cout<<"This program take average rainfall and find the average, low, and high "<<endl;
+    
+    //set decimal places to 2
     cout<<fixed<<setprecision(2)<<showpoint<<endl;
     
-    //explain program 
-    cout<<"Savitch 9thEd Chapter 5 problem 3"<<endl;
-    cout<<"This program will convert meters and centimeters to feet and inches"<<endl;
-    input3(meters, centi);   //run input function to input the meters and centimeters
-    output3(meters, centi);  //run output function to output the results
- }
-//******************************************************************************
-//***********************input the meters and centimeters**********************
-//******************************************************************************
-void input3(int& meters, int& centi){
-    cout<<"Please input meters and centimeters separated by a space"<<endl;
-    cin>>meters>>centi;
-}
-//******************************************************************************
-//************************calculate centimeters*********************************
-//******************************************************************************
-int calcCm3(int meters, int centi){
-    int tot=meters*100.0f+centi; //calculate centimeters
-    return tot;
-}
-//******************************************************************************
-//***************************centimeters to feet*******************************
-//******************************************************************************
-int cmToft3(int meters, int centi){
-    int feet=calcCm3(meters, centi)/30.48f;  //calculate feet
-    return feet;
-}
-//******************************************************************************
-//*****************************feet to inches***********************************
-//******************************************************************************
-float ftToInc3(int meters, int centi){
-    float inch=calcCm3(meters, centi)/30.48f-cmToft3(meters, centi);  
-    float totInch=inch*12;  //calculate the total amount of inches
-    return totInch;
-}
-//******************************************************************************
-//******************************output feet and inches*************************
-//******************************************************************************
-void output3(int meters, int centi){
-    cout<<"There are "<<cmToft3(meters, centi)<<" feet";
-    cout<<" and "<<ftToInc3(meters, centi)<<" inches ";
-    cout<<"in "<<meters<<" meters and "<<centi<<" centimeters"<<endl;
+    //tell user to input the rain fall per month
+    for(int i=0;i<SIZE;i++){
+        cout<<"Please input rainfall for month "<<month[i]<<endl;
+        cin>>rain[i];
+    }
+    
+    //set the min and max equal to rain[0]
+    min=rain[0];
+    max=rain[0];
+    //calculate total rainfall for the year
+    for(int i=0;i<SIZE;i++){
+        //calculate total amount of rainfall
+        total+=rain[i];
+        //find the maximum value for rainfall, and the highest month
+        if(rain[i]>max){
+            max=rain[i];
+            high=month[i];
+        }
+        //find the minimum value for rainfall, and lowest month
+        if(rain[i]<min){
+            min=rain[i];
+            low=month[i];
+        }
+    }
+    //calculate the average for each month 
+    avg=total/SIZE;
+    
+    cout<<"The total rainfall was "<<total<<endl;
+    cout<<"The average monthly rainfall was  "<<avg<<endl;
+    cout<<"The month with the highest rainfall was "<<high<<" with "<<max<<endl;
+    cout<<"The month with the lowest rainfall was  "<<low<<" with "<<min<<endl;
 }
 /****************************************************************
 **************************Problem4*******************************
 *****************************************************************
 */
 void problem4(){
-    //Declare and initialize variables 
-    int lbs=0, oz=0;    //initial value for pounds and ounces 
+    //declare and initialize variables
+    const int SIZE=5;  //size of the array
+    int sales[SIZE];   //array sales
+    string salsa[SIZE] = {"Mild", "Medium", "Sweet", "Hot", "Zesty"};
+    int total=0;   //total amount salsa sold
+    int min=0;     //lowest sales of salsa
+    int max=0;     //highest sales of salsa
+    string high;         //highest salsa seller
+    string low;          //lowest salsa seller
     
-    //set precision to 2
+    //explain program
+    cout<<"Gaddis 8thEd Chapter 7 Problem 3"<<endl;
+    cout<<"This program takes the sales of salsa and finds the total sales as "
+            "well as the highest and lowest selling salsa"<<endl;
+    
+    //set decimal places to 2
     cout<<fixed<<setprecision(2)<<showpoint<<endl;
     
-    //describe the program
-    cout<<"Savitch 9thEd Chapter 5 problem 5"<<endl;
-    cout<<"This program will convert pounds and ounces and convert them to"
-            "kilograms and grams"<<endl;
+    //tell user to input the sales for each salsa
+    for(int i=0;i<SIZE;i++){
+        cout<<"Please input salsa sales for "<<salsa[i]<<endl;
+        cin>>sales[i];
+    }
     
-    //function for inputting the variables
-    input5(lbs, oz); //input pounds and ounces
-    output5(lbs, oz);//display results
-}
-//******************************************************************************
-//***********************input the pounds and ounces****************************
-//******************************************************************************
-void input5(int& lbs, int& oz){
-    cout<<"Please input the pounds and ounces separated by a space"<<endl;
-    cin>>lbs>>oz;
-}
-//******************************************************************************
-//***********************calculate total ounces*********************************
-//******************************************************************************
-int ounce5(int lbs, int oz){
-    int totOZ=lbs*16+oz;
-    return totOZ;
-}
-//******************************************************************************
-//***********************Ounces to kilograms************************************
-//******************************************************************************
-int kilos5(int lbs, int oz){
-    int kilo=ounce5(lbs, oz)*0.02834f;
-    return kilo;
-}
-//******************************************************************************
-//***********************Ounces to grams****************************************
-//******************************************************************************
-float grams5(int lbs, int oz){
-    float gram=(ounce5(lbs, oz)*0.02834f-kilos5(lbs, oz))*1000.0f;
-    return gram;
-}
-//******************************************************************************
-//***********************output all to user*************************************
-//******************************************************************************
-void output5(int lbs,int oz){
-    cout<<"You have "<<lbs<<" pounds and "<<oz<<" ounces "<<endl;
-    cout<<"This is equivalent to "<<kilos5(lbs, oz)<<" kilos and"
-            " "<<grams5(lbs, oz)<<" grams"<<endl;
+    //set the min and max equal sales[0]
+    min=sales[0];
+    max=sales[0];
+    //calculate total amount of sales for the year
+    for(int i=0;i<SIZE;i++){
+        //calculate total sales
+        total+=sales[i];
+        //find the maximum sales for salsa, and the salsa it is 
+        if(sales[i]>max){
+            max=sales[i];
+            high=salsa[i];
+        }
+        //find the minimum sales for salsa, and the salsa it is
+        if(sales[i]<min){
+            min=sales[i];
+            low=salsa[i];
+        }
+    }
+    
+    //output total, high, max, low, min
+    cout<<"The sales for the year was "<<total<<endl;
+    cout<<"The Salsa with the highest sales was "<<high<<" with "<<max<<endl;
+    cout<<"The Salsa with the lowest sales was "<<low<<" with "<<min<<endl;
 }
 /****************************************************************
-**************************Problem4*******************************
+**************************Problem5*******************************
 *****************************************************************
 */
 void problem5(){
-    //Declare and initialize variables 
-    int kilos=0, grams=0;   //initial amount of kilos and grams
+    //declare and initialize variables
+    float  lbs; //amount of pounds the monkeys consume
+    const int MNKYS=3, DAYS=5;  //amount of monkeys, and days to log
+    float array[MNKYS][DAYS];   //array for is monkeys, columns is the days
+    float total=0.0f;           //total amount of food the monkeys consumed
+    float least=0.0f;           //least amount of food eaten by a monkey
+    float most=0.0f;            //most amount of food eaten by a monkey
+    int low;                    //high 
+    int high;                   //low
     
-   //set precision
+    //explain program
+    cout<<"Gaddis 8thEd Chapter 7 Probelm 5 "<<endl;
+    cout<<"This program reads the food of monkeys and find the average eaten per day"<<endl; 
+    
+    //set output to 2 decimal places
     cout<<fixed<<setprecision(2)<<showpoint<<endl;
-   
-    //describe the program
-    cout<<"Savitch 9thEd Chapter 5 problem 6"<<endl;
-    cout<<"This program converts kilograms and grams to pounds and ounces"<<endl;
-    input6(kilos, grams);   //output the results
-    output6(kilos, grams); //output the results
+    
+    //input data for monkeys
+    for(int a=0; a<MNKYS; a++){
+        for(int b=0;b<DAYS; b++){
+            cout<<"Input data for monkey "<<a+1<<" day "<<b+1<<": ";
+            cin>>array[a][b];
+        }
+    }
+    
+    //find the total 
+    for(int a=0; a<MNKYS; a++){
+        for(int b=0; b<DAYS; b++){
+            total+=array[a][b];
+        }
+    }
+    //output the average food per day
+    cout<<"The average amount of food eaten per day was "<<total/DAYS<<endl;
+    
+    //set the min and max to the initial arrays
+    least=array[0][0];
+    most=array[0][0];
+    
+    //find the least amount of food eaten
+    for(int a=0; a<MNKYS; a++){
+        for(int b=0; b<DAYS; b++){
+            if(array[a][b]>=most){
+                most=array[a][b];
+                high=a+1;
+            }
+            if(array[a][b]<=least){
+                least=array[a][b];
+                low=a+1;
+            }
+        }
+    }
+    
+    cout<<"The most amount of food eaten was "<<most<<"lbs by monkey "<<high<<endl;
+    cout<<"The least amount of food eaten was "<<least<<"lbs by monkey "<<low<<endl;
 }
-//******************************************************************************
-//***********************input the kilos and grams******************************
-//******************************************************************************
-void input6(int& kilos, int& grams){
-    cout<<"Please enter the kilograms and grams separated by a space"<<endl;
-    cin>>kilos>>grams;
+/****************************************************************
+**************************Problem6*******************************
+*****************************************************************
+*/
+void problem6(){
+    //declare and initialize variables
+    ifstream inFile;    //infile
+    string file;        //name of file being taken in
+    const int MAX=10;   //max for array
+    int array[MAX];     //array
+    int numFile;        //read number from file 
+    int counter=0;      //set counter equal to zero
+    int tot=0;          //set the total equal to zero
+    int high, low;      //high and low 
+    
+    //explain program
+    cout<<"Gaddis 8thEd Chapter 7 Problem  7"<<endl;
+    cout<<"This program reads in a users input and outputs the file and averages"<<endl;
+    
+    //input the file name
+    cout<<"Please input the file name fr.txt"<<endl;
+    cin>>file;
+    //open the file
+    inFile.open(file.data());
+    
+    //output file not found 
+    if(!inFile){
+        cout<<"File not found"<<endl;
+    }
+    
+    //while loop for assigning array value and calculate total
+    while(inFile >> array[counter]&&counter<MAX){
+        tot+=array[counter];
+        counter++;
+    }
+    //output total
+    cout<<"The total is "<<tot<<endl;
+    //set high and low to first array value
+    high=low=array[0];
+    
+    //for loop, find high and low
+    for(int i=0; i<MAX; i++){
+        if(array[i]>high){
+            high=array[i];
+        }
+        if(array[i]<low){
+            low=array[i];
+        }
+    }
+    //output high and low values and average
+    cout<<"The high number was "<<high<<" and the low number was "<<low<<endl;
+    cout<<"The average of these values was "<<(float)tot/MAX<<endl;
 }
-//******************************************************************************
-//***********************convert kilos and grams to grams***********************
-//******************************************************************************
-int grams6(int kilos,int grams){
-    int totG=kilos*1000+grams;
-    return totG;
+/****************************************************************
+**************************Problem7*******************************
+*****************************************************************
+*/
+void problem7(){
+    const int ID=7; //max amount for array
+    long int empId[ID]{5658845, 4520125, 7895122, 8777541, 
+                       8451277, 1302850, 7580489};  //set array values
+    int hours[ID];  //array for number of hours
+    float payRate[ID];  //array for the pay rate
+    float wages[ID];    //array for the wages
+    
+    //Explain program 
+    cout<<"Gaddis 8thEd Chapter 7 Problem 9"<<endl;
+    cout<<"This program takes user enter hours and payrate and finds wages"<<endl;
+    
+    //set decimal 2
+    cout<<fixed<<setprecision(2)<<showpoint;
+    
+    //for loop to input hours worked and payrate, calculates wage 
+    for(int i=0; i<ID; i++){
+        cout<<"Enter the hours for employee "<<i+1<<" ID:"<<empId[i]<<endl;
+        cin>>hours[i];
+        while(hours[i]<0){
+            cout<<"Invalid hours. Enter a valid number"<<endl;
+            cin>>hours[i];
+        }
+        cout<<"Enter the pay rate of employee "<<i+1<<" ID:"<<empId[i]<<endl;
+        cin>>payRate[i];
+        while(payRate[i]<15){
+            cout<<"Invalid pay rate. Enter a valid pay rate"<<endl;
+            cin>>payRate[i];
+        }
+        wages[i]=hours[i]*payRate[i];
+        cout<<"Employee "<<i+1<<" ID:"<<empId[i]<<" is owed $"<<wages[i]<<endl;
+    }
+    
 }
-//******************************************************************************
-//***********************convert grams to pounds *******************************
-//******************************************************************************
-int pound6(int kilos, int grams){
-    int pounds=grams6(kilos, grams)*0.002204;
-    return pounds;
+/****************************************************************
+**************************Problem8*******************************
+*****************************************************************
+*/
+void problem8(){
+    
 }
-//******************************************************************************
-//***********************convert grams to ounces *******************************
-//******************************************************************************
-float ounces6(int kilos, int grams){
-    float lbs=grams6(kilos, grams)*0.002204f-pound6(kilos, grams);
-    float oz=lbs*16.0f;
-    return oz;
+/****************************************************************
+**************************Problem9*******************************
+*****************************************************************
+*/
+void problem9(){
+    
 }
-//******************************************************************************
-//***********************output the results*************************************
-//******************************************************************************
-void output6(int kilos, int grams){
-    cout<<"You entered "<<kilos<<" kilograms and "<<grams<<" grams"<<endl;
-    cout<<"This translates to "<<pound6(kilos, grams)<<" pounds and"
-            " "<<ounces6(kilos, grams)<<" ounces"<<endl;
+/****************************************************************
+**************************Problem10*******************************
+*****************************************************************
+*/
+void problem10(){
+    
+}
+/****************************************************************
+**************************Problem11*******************************
+*****************************************************************
+*/
+void problem11(){
+    
+}
+/****************************************************************
+**************************Problem12*******************************
+*****************************************************************
+*/
+void problem12(){
+    
+}
+/****************************************************************
+**************************Problem13*******************************
+*****************************************************************
+*/
+void problem13(){
+    
+}
+/****************************************************************
+**************************Problem14*******************************
+*****************************************************************
+*/
+void problem14(){
+    
 }
