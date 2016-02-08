@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=MenuWithFunctions
+PROJECTNAME=MenuWithFunctionsChapter7
 
 # Active Configuration
 DEFAULTCONF=Debug

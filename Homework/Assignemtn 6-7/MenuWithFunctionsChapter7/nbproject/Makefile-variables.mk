@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=menuwithfunctions
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/menuwithfunctions
+CND_ARTIFACT_NAME_Debug=menuwithfunctionschapter7
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/menuwithfunctionschapter7
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=menuwithfunctions.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/menuwithfunctions.tar
+CND_PACKAGE_NAME_Debug=menuwithfunctionschapter7.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/menuwithfunctionschapter7.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=menuwithfunctions
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/menuwithfunctions
+CND_ARTIFACT_NAME_Release=menuwithfunctionschapter7
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/menuwithfunctionschapter7
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=menuwithfunctions.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/menuwithfunctions.tar
+CND_PACKAGE_NAME_Release=menuwithfunctionschapter7.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/menuwithfunctionschapter7.tar
 #
 # include compiler specific variables
 #
