@@ -15,9 +15,9 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-void sort(string [], int);  //sort strings
-void showArr(string [], int);   //show array of strings
-int binSrch(string [], int, string);    //binary search for strings
+void sort5(string [], int);  //sort strings
+void showArr5(string [], int);   //show array of strings
+int binSrch5(string [], int, string);    //binary search for strings
 //Execution Begins Here
 int main(int argc, char** argv) {
     const int SIZE = 20;    //max size for the array
@@ -33,17 +33,19 @@ int main(int argc, char** argv) {
         "Pike, Gordon", "Sanchez, Jose" };  //values for the array
     
     //input the name 
+    cout<<"Gaddis 8thed Chapter 8 Problem 7"<<endl;
+    cout<<"This program find the users entry usuing strings"<<endl;
     cout<<"Please enter the name you are looking for: ";
     getline(cin, input);
     
     //sort the array
-    sort(names, SIZE);
+    sort5(names, SIZE);
     
     //show the array
-    showArr(names, SIZE);
+    showArr5(names, SIZE);
     
     //run the binary search
-    result=binSrch(names, SIZE, input);
+    result=binSrch5(names, SIZE, input);
     
     if(result==-1){
         cout<<" The entry was not found"<<endl;
@@ -56,7 +58,7 @@ int main(int argc, char** argv) {
 //******************************************************************************
 //*******************************sort function**********************************
 //******************************************************************************
-void sort(string array[], int size){
+void sort5(string array[], int size){
     int srtScan, minIndx;
     string minVal;
     for (srtScan = 0; srtScan < (size-1); srtScan++){
@@ -75,7 +77,7 @@ void sort(string array[], int size){
 //******************************************************************************
 //*******************************show array*************************************
 //******************************************************************************
-void showArr(string arry[], int size){
+void showArr5(string arry[], int size){
     for(int i=0; i<size; i++){
         cout<<arry[i]<<endl;
     }
@@ -83,7 +85,7 @@ void showArr(string arry[], int size){
 //******************************************************************************
 //******************************Binary search***********************************
 //******************************************************************************
-int binSrch(string array[], int size, string input){
+int binSrch5(string array[], int size, string input){
     int first=0;        //first array element 
     int last=size-1;    //last array element
     int middle=0;         //midpoint of search

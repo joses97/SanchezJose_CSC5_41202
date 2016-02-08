@@ -16,8 +16,8 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-void sort(string [], int);  //sort function for strings
-void showArr(string [], int);   //show array function for strings
+void sort3(string [], int);  //sort function for strings
+void showArr3(string [], int);   //show array function for strings
 //Execution Begins Here
 int main(int argc, char** argv) {
     const int SIZE = 20; //max size for the array 
@@ -34,10 +34,10 @@ int main(int argc, char** argv) {
     cout<<"This program takes the array values and sorts them"<<endl;
     
     //sort the array
-    sort(names, SIZE);
+    sort3(names, SIZE);
     
     //show the array
-    showArr(names, SIZE);
+    showArr3(names, SIZE);
     
     //Exit stage right and close
     return 0;
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
 //******************************************************************************
 //*******************************sort function**********************************
 //******************************************************************************
-void sort(string array[], int size){
+void sort3(string array[], int size){
     int srtScan, minIndx;
     string minVal;
     for (srtScan = 0; srtScan < (size-1); srtScan++){
@@ -65,7 +65,7 @@ void sort(string array[], int size){
 //******************************************************************************
 //*******************************show array function****************************
 //******************************************************************************
-void showArr(string arry[], int size){
+void showArr3(string arry[], int size){
     for(int i=0; i<size; i++){
         cout<<arry[i]<<endl;
     }

@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     if(rtrnval != -1){
         cout<<input<<" Is the winning number! "<<endl;
     }
-    else {cout<<input<<" Is not a winning number";}
+    else {cout<<input<<" Is not a winning number"<<endl;}
       
     return 0;
 }

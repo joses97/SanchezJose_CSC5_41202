@@ -24,14 +24,7 @@ void problem4();
 void problem5();
 void problem6();
 void problem7();
-void problem8();
-void problem9();
-void problem10();
-void problem11();
-void problem12();
-void problem13();
-void problem14();
-void problem15();
+int srchId(int MAX, int number[], int input);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -49,13 +42,6 @@ int main(int argc, char** argv) {
         cout<<"Type 5 to Display the Fifth Problem "<<endl;
         cout<<"Type 6 to Display the First Problem "<<endl;
         cout<<"Type 7 to Display the Second Problem "<<endl;
-        cout<<"Type 8 to Display the Third Problem "<<endl;
-        cout<<"Type 9 to Display the Fourth Problem "<<endl;
-        cout<<"Type 10 to Display the Fifth Problem "<<endl;
-        cout<<"Type 11 to Display the First Problem "<<endl;
-        cout<<"Type 12 to Display the Second Problem "<<endl;
-        cout<<"Type 13 to Display the Third Problem "<<endl;
-        cout<<"Type 14 to Display the Fourth Problem "<<endl;
         cout<<"Type anything else to exit"<<endl<<endl;
         cin>>nSoltn;
        //Solution to all the problems
@@ -67,13 +53,6 @@ int main(int argc, char** argv) {
            case 5: {problem5();}break;
            case 6: {problem6();}break;
            case 7: {problem7();}break;
-           case 8: {problem8();}break;
-           case 9: {problem9();}break;
-           case 10: {problem10();}break;
-           case 11: {problem11();}break;
-           case 12: {problem12();}break;
-           case 13: {problem13();}break;
-           case 14: {problem14();}break;
            default : cout<<""<<endl;
        }
        cout<<"Would you like to see another problem?"<<endl;
@@ -412,52 +391,4 @@ void problem7(){
     }
     
 }
-/****************************************************************
-**************************Problem8*******************************
-*****************************************************************
-*/
-void problem8(){
-    
-}
-/****************************************************************
-**************************Problem9*******************************
-*****************************************************************
-*/
-void problem9(){
-    
-}
-/****************************************************************
-**************************Problem10*******************************
-*****************************************************************
-*/
-void problem10(){
-    
-}
-/****************************************************************
-**************************Problem11*******************************
-*****************************************************************
-*/
-void problem11(){
-    
-}
-/****************************************************************
-**************************Problem12*******************************
-*****************************************************************
-*/
-void problem12(){
-    
-}
-/****************************************************************
-**************************Problem13*******************************
-*****************************************************************
-*/
-void problem13(){
-    
-}
-/****************************************************************
-**************************Problem14*******************************
-*****************************************************************
-*/
-void problem14(){
-    
-}
+
