@@ -309,7 +309,7 @@ void minMax(float array[], int size){
             minB=i+1;
         }
     }
-    cout<<"At the most your wallet contained $"<<max<<" at bet "<<maxA<<endl;
+    cout<<"At the most your wallet contained  $"<<max<<" at bet "<<maxA<<endl;
     cout<<"At the least your wallet contained $"<<min<<" at bet "<<minB<<endl;
 }
 //******************************************************************************
@@ -324,3 +324,11 @@ void showArr2(float array[], int totIn){
         }
     }
 }
+
+//note to self: maybe i can use a 2d array by using the colors
+// like using array[a][b] where a is red or black and b is the net amount won 
+//display the table using an array
+//           RED      BLACK
+// WON BET # 500      -100
+//           100      -200
+//           -100     1000
