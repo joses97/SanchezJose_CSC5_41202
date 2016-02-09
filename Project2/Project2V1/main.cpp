@@ -332,3 +332,6 @@ void showArr2(float array[], int totIn){
 // WON BET # 500      -100
 //           100      -200
 //           -100     1000
+
+
+//maybe add search feature to find out how much a user made on a certain bet?
