@@ -261,7 +261,7 @@ float money(float& mon){
     cout<<"Welcome to the roulette wheel"<<endl;
     cout<<"How much money do you have to bet tonight? MAX:100,000"<<endl;
     cin>>mon;    //input total amount of money user if willing to spend
-    return mon;
+    return mon;  
 }
 //******************************************************************************
 //***********************display the array of values ***************************
@@ -313,7 +313,7 @@ void minMax(float array[], int size){
     cout<<"At the least your wallet contained $"<<min<<" at bet "<<minB<<endl;
 }
 //******************************************************************************
-//***********************display the array of values2 ***************************
+//***********************display the array of betM,*****************************
 //******************************************************************************
 void showArr2(float array[], int totIn){
     for(int a=0; a<totIn; a++){
