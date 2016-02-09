@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Jose Sanchez
  * Purpose: Roulette wheel
- * Created on February 2nd 2016, 2:00PM
+ * Created on February 9th 2016
  */
 
 //System Libraries
