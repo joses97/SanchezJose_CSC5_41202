@@ -23,6 +23,7 @@ float money(float& mon); //gets users input using pass by reference
 void showArr(float array[], int totIn); //show the amount the user had for each bet
 void sort(float array[], int size);     //sort the array 
 void minMax(float array[], int size);   //finds the minimum and maximum
+void showArr2(float array[], int totIn); //shows the sorted array with comments
 //Execution Begins Here
 int main(int argc, char** argv) {
     //declare and initialize variables
@@ -41,6 +42,7 @@ int main(int argc, char** argv) {
     ofstream outFile;               //outputs to a file
     const int HI=100;              //max amount of items the array can hold
     float value[HI];               //array to hold value at certain points
+    float betM[HI];                 //the amount of money won per bet
     int i=0;                       //used to increment the array;   
     
     
@@ -95,10 +97,11 @@ int main(int argc, char** argv) {
             cout<<"The number is "<<static_cast<int>(roll)<<endl; //display number out of the roulette wheel
                 //if they got guess right run 
                 if (guess==roll){
-                    cout<<"You've won"<<endl;
-                    cout<<"Your pay out is"<<bet*37<<endl;  //output bet*37
+                    cout<<"You've won!"<<endl;
+                    cout<<"Your pay out is $"<<bet*37<<endl;  //output bet*37
                     totMon+=(bet*37);   //calculate the new total amount
                     value[i]=totMon;    //set the array equal to the current totMon
+                    betM[i]=(bet*37);   //set the value of betM to the winnings of the bet
                     i++;                //increment i so it hold a new value
                     cout<<"Your remaining balance is $"<<totMon<<endl;  //output totMon
                     wins++; //add 1 to number win
@@ -108,6 +111,7 @@ int main(int argc, char** argv) {
                     cout<<"You lost $"<<bet<<" on this gamble"<<endl;   //output bet amount
                     totMon=totMon-bet;  //output totMon amount
                     value[i]=totMon;    //set the array equal to the current totMon
+                    betM[i]=(-bet);     //set the value of betM to the loss
                     i++;                //increment i so it hold a new value
                     cout<<"Your remaining balance is $"<<totMon<<endl;
                     loss++; //add 1 to number loss
@@ -139,6 +143,7 @@ int main(int argc, char** argv) {
                     if (pick==2){ //if pick=2 then then user wins
                         totMon=totMon+(bet*1.05f);//calculate new balance
                         value[i]=totMon;    //set the array equal to the current totMon
+                        betM[i]=(bet*1.05f); //set betM to the winnings 
                         i++;                //increment i so it hold a new value
                         cout<<"Its Red! You won    $"<<bet*1.05f<<endl; //output bet*1.05f
                         cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
@@ -146,6 +151,7 @@ int main(int argc, char** argv) {
                     }else if(pick==1){  //if pick=1 then user loses
                         totMon=totMon-bet;//calculate totMon
                         value[i]=totMon;    //set the array equal to the current totMon
+                        betM[i]=(-bet);     //set betM to the losses
                         i++;                //increment i so it hold a new value
                         cout<<"Its Red! You lost $"<<bet<<endl; //output bet
                         cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
@@ -155,6 +161,7 @@ int main(int argc, char** argv) {
                 case 37: case 38:{ //37 and 38 represent 0 and 00, user always losses
                     totMon=totMon-bet; //calculate totMon for a loss
                     value[i]=totMon;    //set the array equal to the current totMon
+                    betM[i]=(-bet);     //set betM to the losses
                     i++;                //increment i so it hold a new value
                     if (winCol==37){cout<<"The ball landed on 0!"<<endl;}
                     else if (winCol==38){cout<<"The ball landed on a 00!"<<endl;}
@@ -165,14 +172,16 @@ int main(int argc, char** argv) {
                     if(pick==2){    //if pick==2 user loses
                         totMon=totMon-bet;  //calculate new totMon for loss
                         value[i]=totMon;    //set the array equal to the current totMon
+                        betM[i]=(-bet);     //set betM to the losses
                         i++;                //increment i so it hold a new value
                         cout<<"Its Black! You lost $"<<bet<<endl; //output bet
                         cout<<"Your new balance is $"<<totMon<<endl;  //output totMon
                         lossC++;    //increment color losses
-                    }else if(pick==1){  //if pick ==1 user wins
+                    }else if(pick==1){              //if pick ==1 user wins
                         totMon=totMon+(bet*1.05f);  //calculate new balance for winnings
-                        value[i]=totMon;    //set the array equal to the current totMon
-                        i++;                //increment i so it hold a new value
+                        value[i]=totMon;            //set the array equal to the current totMon
+                        betM[i]=(bet*1.05f);        //set betM to winnings
+                        i++;                        //increment i so it hold a new value
                         cout<<"Its Black! You won  $"<<bet*1.05f<<endl; //calculate bet*1.05f
                         cout<<"Your new balance is $"<<totMon<<endl;    //calculate totMon
                         winsC++;    //increment color wins 
@@ -225,17 +234,21 @@ int main(int argc, char** argv) {
     //close outFile
     outFile.close();    //close the outfile
     
+    
     //show how much the user won or loss per turn 
+    cout<<endl;
     showArr(value, i);
     
     //show min and max of bets
+    cout<<endl;
     minMax(value, i);
     
     //sort the array 
     sort(value, i);
     
     //show the array
-    showArr(value, i);
+    cout<<endl;
+    showArr2(betM, i);
     
     
     //Exit stage right and close
@@ -255,7 +268,6 @@ float money(float& mon){
 //******************************************************************************
 void showArr(float array[], int totIn){
     for(int a=0; a<totIn; a++){
-        cout<<endl;
         cout<<"After bet "<<a+1<<" you had $"<<array[a]<<endl;
     }
 }
@@ -297,7 +309,18 @@ void minMax(float array[], int size){
             minB=i+1;
         }
     }
-    cout<<endl;
     cout<<"At the most your wallet contained $"<<max<<" at bet "<<maxA<<endl;
     cout<<"At the least your wallet contained $"<<min<<" at bet "<<minB<<endl;
+}
+//******************************************************************************
+//***********************display the array of values2 ***************************
+//******************************************************************************
+void showArr2(float array[], int totIn){
+    for(int a=0; a<totIn; a++){
+        if(array[a]>0){
+            cout<<"On bet "<<a+1<<" You won  $"<<array[a]<<endl;
+        }else if(array[a]<0){
+            cout<<"On bet "<<a+1<<" You lost $"<<-1 * array[a]<<endl;
+        }
+    }
 }
