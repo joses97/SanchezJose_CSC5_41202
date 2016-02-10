@@ -96,7 +96,7 @@ int main(int argc, char** argv) {
             cin>>blank;//doesnt do anything, used to create a pause
             //begin rng for the outcome
             char roll=rand()%38+1;  //set the random number range 1-38
-            cout<<"The number is "<<static_cast<int>(roll)<<endl; //display number out of the roulette wheel
+            cout<<endl<<"The number is "<<static_cast<int>(roll)<<endl; //display number out of the roulette wheel
                 //if they got guess right run 
                 if (guess==roll){
                     cout<<"You've won!"<<endl;
@@ -104,6 +104,7 @@ int main(int argc, char** argv) {
                     totMon+=(bet*37);   //calculate the new total amount
                     value[i]=totMon;    //set the array equal to the current totMon
                     betM[i]=(bet*37);   //set the value of betM to the winnings of the bet
+                    table[3][i]=(bet*37);//set value of table row 3 to bet 
                     i++;                //increment i so it hold a new value
                     cout<<"Your remaining balance is $"<<totMon<<endl;  //output totMon
                     wins++; //add 1 to number win
@@ -114,6 +115,7 @@ int main(int argc, char** argv) {
                     totMon=totMon-bet;  //output totMon amount
                     value[i]=totMon;    //set the array equal to the current totMon
                     betM[i]=(-bet);     //set the value of betM to the loss
+                    table[3][i]=(-bet); //set amount for table
                     i++;                //increment i so it hold a new value
                     cout<<"Your remaining balance is $"<<totMon<<endl;
                     loss++; //add 1 to number loss
@@ -348,8 +350,8 @@ void showArr3(float array[][100], int totIn){
     for(int i=0; i<totIn; i++){
         cout<<left<<setw(21)<<setfill(' ')<<"BET";
     }
-        cout<<endl;
-    for(int row=0; row<3; row++){
+    cout<<endl;
+    for(int row=0; row<4; row++){
         for(int col=0; col<totIn; col++){
             cout<<left<<setw(19)<<setfill(' ')<<array[row][col]<<"  ";
         }
@@ -362,6 +364,9 @@ void showArr3(float array[][100], int totIn){
         }
         if(row==2){
             cout<<"0, 00 "<<endl;
+        }
+        if(row==3){
+            cout<<"Number"<<endl;
         }
     }
 }
