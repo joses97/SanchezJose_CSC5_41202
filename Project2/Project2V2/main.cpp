@@ -364,11 +364,3 @@ void showArr3(float array[][100], int totIn){
         }
     }
 }
-//note to self: maybe i can use a 2d array by using the colors
-// like using array[a][b] where a is red or black and b is the net amount won 
-//display the table using an array
-//           RED      BLACK
-// WON BET # 0      -100
-//           100      0
-//           -100     0
-
