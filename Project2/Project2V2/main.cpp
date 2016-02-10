@@ -209,6 +209,7 @@ int main(int argc, char** argv) {
         playsC=winsC+lossC; //counts the number of times the user played for color  
     }
     //output totMon1 and totMon
+    cout<<endl;
     cout<<"You had $"<<totMon1<<" to start with and now have $"<<totMon<<endl;
     //if totMon1>totMon calculate investment for 5 years instead of gambling 
     if (totMon1>totMon){  
@@ -316,16 +317,16 @@ void minMax(float array[], int size){
         //find the maximum value for rainfall, and the highest month
         if(array[i]>max){
             max=array[i];
-            maxA=i+1;
+            maxA=i;
         }
         //find the minimum value for rainfall, and lowest month
         if(array[i]<min){
             min=array[i];
-            minB=i+1;
+            minB=i;
         }
     }
-    cout<<"At the most your wallet contained  $"<<max<<" at bet "<<maxA<<endl;
-    cout<<"At the least your wallet contained $"<<min<<" at bet "<<minB<<endl;
+    cout<<"At the most your wallet contained  $"<<max<<" at bet "<<maxA+1<<endl;
+    cout<<"At the least your wallet contained $"<<min<<" at bet "<<minB+1<<endl;
 }
 //******************************************************************************
 //***********************display the array of betM,*****************************
