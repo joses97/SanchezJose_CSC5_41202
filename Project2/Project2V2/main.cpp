@@ -357,13 +357,13 @@ void showArr3(float array[][100], int totIn){
         }
    
         if(row==0){
-            cout<<"RED   "<<endl;
+            cout<<"RED"<<endl;
         }
         if(row==1){
-            cout<<"BLACK "<<endl;
+            cout<<"BLACK"<<endl;
         }
         if(row==2){
-            cout<<"0, 00 "<<endl;
+            cout<<"0 or 00"<<endl;
         }
         if(row==3){
             cout<<"Number"<<endl;
