@@ -156,7 +156,7 @@ int main(int argc, char** argv) {
                         totMon=totMon-bet;//calculate totMon
                         value[i]=totMon;    //set the array equal to the current totMon
                         betM[i]=(-bet);     //set betM to the losses
-                        table[0][i]=betM[i]; //keeps track of win or losses from red
+                        table[1][i]=betM[i]; //keeps track of win or losses from red
                         i++;                //increment i so it hold a new value
                         cout<<"Its Red! You lost $"<<bet<<endl; //output bet
                         cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
@@ -181,7 +181,7 @@ int main(int argc, char** argv) {
                         totMon=totMon-bet;  //calculate new totMon for loss
                         value[i]=totMon;    //set the array equal to the current totMon
                         betM[i]=(-bet);     //set betM to the losses
-                        table[1][i]=betM[i];    //win money and loss money for black
+                        table[0][i]=betM[i];    //win money and loss money for black
                         i++;                //increment i so it hold a new value
                         cout<<"Its Black! You lost $"<<bet<<endl; //output bet
                         cout<<"Your new balance is $"<<totMon<<endl;  //output totMon
