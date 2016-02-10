@@ -24,6 +24,7 @@ void showArr(float array[], int totIn); //show the amount the user had for each 
 void sort(float array[], int size);     //sort the array 
 void minMax(float array[], int size);   //finds the minimum and maximum
 void showArr2(float array[], int totIn); //shows the sorted array with comments
+void showArr3(float array[][100], int totIn);
 //Execution Begins Here
 int main(int argc, char** argv) {
     //declare and initialize variables
@@ -43,6 +44,7 @@ int main(int argc, char** argv) {
     const int HI=100;              //max amount of items the array can hold
     float value[HI];               //array to hold value at certain points
     float betM[HI];                 //the amount of money won per bet
+    float table[HI][HI];            //records for table of color stats 
     int i=0;                       //used to increment the array;   
     
     
@@ -144,17 +146,21 @@ int main(int argc, char** argv) {
                         totMon=totMon+(bet*1.05f);//calculate new balance
                         value[i]=totMon;    //set the array equal to the current totMon
                         betM[i]=(bet*1.05f); //set betM to the winnings 
+                        table[0][i]=betM[i];    //array to keep track of the win or loss from reds
                         i++;                //increment i so it hold a new value
                         cout<<"Its Red! You won    $"<<bet*1.05f<<endl; //output bet*1.05f
                         cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
+                        cout<<endl;
                         winsC++;    //add one to wins for color
                     }else if(pick==1){  //if pick=1 then user loses
                         totMon=totMon-bet;//calculate totMon
                         value[i]=totMon;    //set the array equal to the current totMon
                         betM[i]=(-bet);     //set betM to the losses
+                        table[0][i]=betM[i]; //keeps track of win or losses from red
                         i++;                //increment i so it hold a new value
                         cout<<"Its Red! You lost $"<<bet<<endl; //output bet
                         cout<<"Your new balance is $"<<totMon<<endl;    //output totMon
+                        cout<<endl;
                         lossC++;    //add one to losses for color                       
                     }
                 }break; //cases for a definite loss
@@ -162,29 +168,35 @@ int main(int argc, char** argv) {
                     totMon=totMon-bet; //calculate totMon for a loss
                     value[i]=totMon;    //set the array equal to the current totMon
                     betM[i]=(-bet);     //set betM to the losses
+                    table[2][i]=betM[i];    //keeps track of the money lost by landing on 0, 00
                     i++;                //increment i so it hold a new value
                     if (winCol==37){cout<<"The ball landed on 0!"<<endl;}
                     else if (winCol==38){cout<<"The ball landed on a 00!"<<endl;}
                     cout<<"You lost $"<<bet<<endl;  //output bet
                     lossC++; //add one to losses for color
+                    cout<<endl;
                 }break;
                 default:{ //default statement for ball landing on black
                     if(pick==2){    //if pick==2 user loses
                         totMon=totMon-bet;  //calculate new totMon for loss
                         value[i]=totMon;    //set the array equal to the current totMon
                         betM[i]=(-bet);     //set betM to the losses
+                        table[1][i]=betM[i];    //win money and loss money for black
                         i++;                //increment i so it hold a new value
                         cout<<"Its Black! You lost $"<<bet<<endl; //output bet
                         cout<<"Your new balance is $"<<totMon<<endl;  //output totMon
                         lossC++;    //increment color losses
+                        cout<<endl;
                     }else if(pick==1){              //if pick ==1 user wins
                         totMon=totMon+(bet*1.05f);  //calculate new balance for winnings
                         value[i]=totMon;            //set the array equal to the current totMon
                         betM[i]=(bet*1.05f);        //set betM to winnings
+                        table[1][i]=betM[i];    //win money and loss money for black
                         i++;                        //increment i so it hold a new value
                         cout<<"Its Black! You won  $"<<bet*1.05f<<endl; //calculate bet*1.05f
                         cout<<"Your new balance is $"<<totMon<<endl;    //calculate totMon
                         winsC++;    //increment color wins 
+                        cout<<endl;
                     }
                 }break;
             }
@@ -249,6 +261,9 @@ int main(int argc, char** argv) {
     //show the array
     cout<<endl;
     showArr2(betM, i);
+    
+    //show the array for wins and losses on color
+    showArr3(table, i);
     
     
     //Exit stage right and close
@@ -324,7 +339,31 @@ void showArr2(float array[], int totIn){
         }
     }
 }
-
+//******************************************************************************
+//***********************display the array of table*****************************
+//******************************************************************************
+void showArr3(float array[][100], int totIn){
+    cout<<endl;
+    for(int i=0; i<totIn; i++){
+        cout<<left<<setw(21)<<setfill(' ')<<"BET";
+    }
+        cout<<endl;
+    for(int row=0; row<3; row++){
+        for(int col=0; col<totIn; col++){
+            cout<<left<<setw(19)<<setfill(' ')<<array[row][col]<<"  ";
+        }
+   
+        if(row==0){
+            cout<<"RED   "<<endl;
+        }
+        if(row==1){
+            cout<<"BLACK "<<endl;
+        }
+        if(row==2){
+            cout<<"0, 00 "<<endl;
+        }
+    }
+}
 //note to self: maybe i can use a 2d array by using the colors
 // like using array[a][b] where a is red or black and b is the net amount won 
 //display the table using an array
