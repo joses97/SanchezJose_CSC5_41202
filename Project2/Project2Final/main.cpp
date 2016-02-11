@@ -19,7 +19,7 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-float money(float& mon); //gets users input using pass by reference
+float money(float *mon); //gets users input using pass by reference
 void showArr(float array[], int totIn); //show the amount the user had for each bet
 void minMax(float array[], int size);   //finds the minimum and maximum
 void showArr2(float array[], int totIn); //shows the sorted array with comments
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
     //output results to a file
     outFile.open("Stats.txt");      //output to a file named stats.txt
     
-    totMon1=money(totMon); //set totMon1=totMon so it saves the value for investment later
+    totMon1=money(&totMon); //call function money() and set totMon1=money(totMon)
     
     //if statement to make sure user doesn't over 100k
     if (totMon>MAX){
@@ -249,19 +249,19 @@ int main(int argc, char** argv) {
     
     
     
-    //show how much the user won or loss per turn 
+    //function showArr show how much the user won or loss per turn 
     cout<<endl;
     showArr(value, i);
     
-    //show min and max of bets
+    //function minMax finds the min and max
     cout<<endl;
     minMax(value, i);
     
-    //show the array
+    //function showArr2 displays won and loss per bet
     cout<<endl;
     showArr2(betM, i);
     
-    //show the array for wins and losses on color
+    //showArr3 displays the array for wins and losses on color in a table
     showArr3(table, i);
     
     
@@ -273,51 +273,54 @@ int main(int argc, char** argv) {
 //******************************************************************************
 //*****************************Get users information ***************************
 //******************************************************************************
-float money(float& mon){
+float money(float *mon){    //money() gets users input and returns it using
     cout<<"Welcome to the roulette wheel"<<endl;
     cout<<"How much money do you have to bet tonight? MAX:100,000"<<endl;
-    cin>>mon;    //input total amount of money user if willing to spend
-    return mon;  
+    cin>>*mon;    //input total amount of money user if willing to spend
+    return *mon;  //ret
 }
 //******************************************************************************
 //***********************display the array of values ***************************
 //******************************************************************************
-void showArr(float array[], int totIn){
-    for(int a=0; a<totIn; a++){
-        cout<<"After bet "<<a+1<<" you had $"<<array[a]<<endl;
+void showArr(float array[], int totIn){ //showARR to display money after each bet
+    for(int a=0; a<totIn; a++){         //a=0 loop a++ while a<totIn
+        cout<<"After bet "<<a+1<<" you had $"<<array[a]<<endl;  //display a+1 array[a]
     }
 }
 //******************************************************************************
 //*******************find low and high wallet size *****************************
 //******************************************************************************
-void minMax(float array[], int size){
-    int max=array[0];
-    int min=array[0];
-    int maxA=0;
-    int minB=0;
-    for(int i=0;i<size;i++){
+void minMax(float array[], int size){   //minMax fins min and max
+    float max=array[0]; //set max to array[0]
+    float min=array[0]; //set min to array[0]
+    int maxA=0;         //set maxA=0
+    int minB=0;         //set minB=0
+    for(int i=0;i<size;i++){    //loop while i=0 i<size then i++
         //find the maximum value 
-        if(array[i]>max){
-            max=array[i];
-            maxA=i;
+        if(array[i]>max){   //if array[i]>max]
+            max=array[i];   //max=array[i]
+            maxA=i;         //maxA=i
         }
         //find the minimum value 
-        if(array[i]<min){
-            min=array[i];
-            minB=i;
+        if(array[i]<min){   //if array[i]<min
+            min=array[i];   //min=array[i]
+            minB=i;         //minB=i
         }
     }
-    cout<<"At the most your wallet contained  $"<<max<<" at bet "<<maxA+1<<endl;
-    cout<<"At the least your wallet contained $"<<min<<" at bet "<<minB+1<<endl;
+    //output max, min, maxA+1, minB+1
+    cout<<"At the most your wallet contained"
+            "  $"<<left<<setw(7)<<setfill(' ')<<max<<" at bet "<<maxA+1<<endl;
+    cout<<"At the least your wallet contained"
+            " $"<<left<<setw(7)<<setfill(' ')<<min<<" at bet "<<minB+1<<endl;
 }
 //******************************************************************************
 //***********************display the array of betM,*****************************
 //******************************************************************************
-void showArr2(float array[], int totIn){
-    for(int a=0; a<totIn; a++){
-        if(array[a]>0){
+void showArr2(float array[], int totIn){    //showArr2 for bet win loss list
+    for(int a=0; a<totIn; a++){ //loop, a=0, a<totIn, a++
+        if(array[a]>0){ //if array[a]>0 output a+1, array[a]]
             cout<<"On bet "<<a+1<<" You won  $"<<array[a]<<endl;
-        }else if(array[a]<0){
+        }else if(array[a]<0){// if array[a]<0  output a+1, -1 * array[a]
             cout<<"On bet "<<a+1<<" You lost $"<<-1 * array[a]<<endl;
         }
     }
@@ -325,27 +328,27 @@ void showArr2(float array[], int totIn){
 //******************************************************************************
 //***********************display the array of table*****************************
 //******************************************************************************
-void showArr3(float array[][100], int totIn){
+void showArr3(float array[][100], int totIn){   //showArr3 for table 
     cout<<endl;
-    for(int i=0; i<totIn; i++){
+    for(int i=0; i<totIn; i++){ //i=0, i<totIn, i++, output "BET"
         cout<<left<<setw(21)<<setfill(' ')<<"BET";
     }
     cout<<endl;
-    for(int row=0; row<4; row++){
-        for(int col=0; col<totIn; col++){
-            cout<<left<<setw(19)<<setfill(' ')<<array[row][col]<<"  ";
+    for(int row=0; row<4; row++){//loop, row=0, loop while row<4. row++
+        for(int col=0; col<totIn; col++){   //loop, col=0, col<totIn, col++
+            cout<<left<<setw(19)<<setfill(' ')<<array[row][col]<<"  ";  //output array[row][col]
         }
    
-        if(row==0){
+        if(row==0){ //if row==0  output "RED"
             cout<<"RED"<<endl;
         }
-        if(row==1){
+        if(row==1){ //if row==1 output "BLACK"
             cout<<"BLACK"<<endl;
         }
-        if(row==2){
+        if(row==2){ //if row==2 output "0 or 00"
             cout<<"0 or 00"<<endl;
         }
-        if(row==3){
+        if(row==3){ //if row==3 output "Number
             cout<<"Number"<<endl;
         }
     }
