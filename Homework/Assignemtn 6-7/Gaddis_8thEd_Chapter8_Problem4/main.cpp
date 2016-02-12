@@ -35,6 +35,7 @@ int main(int argc, char** argv) {
       
     //sort the values
     Sort(number, MAX);  //program sorts the numbers
+    cout<<number[0]<<endl;
     
     //binary search
     results=binSrch(number, MAX, input);    //gets results, either -1, or middle
@@ -57,7 +58,7 @@ void Sort(int array[], int size){
         minIndx = srtScan;
         minVal = array[srtScan];
         for(int index = srtScan + 1; index < size; index++){
-            if (array[index] < minVal){
+            if (array[index] > minVal){
                 minVal = array[index];
                 minIndx = index;
             }

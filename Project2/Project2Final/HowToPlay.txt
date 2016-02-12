@@ -1,0 +1,7 @@
+Direcrtions: 
+You are allowed a maximum of 100,000 to bet for the sitting. 
+At the roulette wheel you are allowed to bet 10,000 maximum.
+Your bet can either be placed on an idvidual number, or an a color.
+The payout for a number is 37 times your initial bet.
+The payout for a color is 1.05 times your intial bet.
+Enjoy gambling.

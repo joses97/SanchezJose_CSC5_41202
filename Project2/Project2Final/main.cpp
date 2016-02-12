@@ -17,13 +17,15 @@ using namespace std;
 //User Libraries
 
 //Global Constants
-
+const int HI=100;              //max amount of items the array can hold
+const int INST=7;              //set max value for displaying instruction array
 //Function prototypes
 float money(float *mon); //gets users input using pass by reference
 void showArr(float array[], int totIn); //show the amount the user had for each bet
 void minMax(float array[], int size);   //finds the minimum and maximum
 void showArr2(float array[], int totIn); //shows the sorted array with comments
-void showArr3(float array[][100], int totIn);   //show the 2d array
+void showArr3(float array[][HI], int totIn);   //show the 2d array
+void Sort(float array[], int size);           //sorts from high to low and display
 //Execution Begins Here
 int main(int argc, char** argv) {
     //declare and initialize variables
@@ -40,18 +42,28 @@ int main(int argc, char** argv) {
     char winCol;                    //the winning color for gambling on a color
     char pick;                      //the numbers the uses gets for choosing a color
     ofstream outFile;               //outputs to a file
-    const int HI=100;              //max amount of items the array can hold
-    float value[HI];               //array to hold value at certain points
+    ifstream instrct;               //instructions for the game
+    string display[INST];           //displays the in file
+    float value[HI];                //array to hold value at certain points
     float betM[HI];                 //the amount of money won per bet
     float table[HI][HI];            //records for table of color stats 
-    int i=0;                       //used to increment the array;   
+    int i=0;                        //used to increment the array;   
+    int loop1=0, loop2=5;           //set the counter for a while loop and a do while loop
+    bool qstn=false;                //response to gambling
     
     
     //output results to a file
     outFile.open("Stats.txt");      //output to a file named stats.txt
+    instrct.open("HowToPlay.txt");  //input from file HowToPlay.txt
     
+    while(getline(instrct,display[loop1])){ //while loop to display directions
+        cout<<display[loop1];               //display display[loop1]
+                loop1++;                    //loop ++
+    }
+    
+    cout<<endl<<endl;
     totMon1=money(&totMon); //call function money() and set totMon1=money(totMon)
-    
+
     //if statement to make sure user doesn't over 100k
     if (totMon>MAX){
         cout<<"You are only allowed to have $100,000 to bet. "
@@ -216,9 +228,10 @@ int main(int argc, char** argv) {
     if (totMon1>totMon){  
         cout<<"If you were to have invested this money for 5 years at 10% you would have $";
         //loop the calculate interest over 5 years
-        for(int i=5;i>0;i--){   //for loop
+        do{  //do while loop
             totMon1=totMon1*0.10f+totMon1; //calculate interest at 10 percent for 5 years
-        }
+            loop2--;                    //loop2--
+        }while(loop2>0);                //while loop2>0
         cout<<totMon1<<endl;    //output totMon1
     }else cout<<"Congrats you beat the house!"<<endl;
     
@@ -245,10 +258,7 @@ int main(int argc, char** argv) {
     outFile<<"You won on a number a total of  "<<wins<<" times"<<endl;
     outFile<<"You lost on a color a total of  "<<lossC<<" times"<<endl;
     outFile<<"You lost on a number a total of "<<loss<<" times"<<endl;
-    //close outFile
-    
-    
-    
+
     //function showArr show how much the user won or loss per turn 
     cout<<endl;
     showArr(value, i);
@@ -261,10 +271,13 @@ int main(int argc, char** argv) {
     cout<<endl;
     showArr2(betM, i);
     
+    //sorts the array from lowest to highest
+    Sort(betM, i);
+    
     //showArr3 displays the array for wins and losses on color in a table
     showArr3(table, i);
     
-    
+    instrct.close();    //close the infile
     outFile.close();    //close the outfile
     
     //Exit stage right and close
@@ -297,12 +310,14 @@ void minMax(float array[], int size){   //minMax fins min and max
     int minB=0;         //set minB=0
     for(int i=0;i<size;i++){    //loop while i=0 i<size then i++
         //find the maximum value 
-        if(array[i]>max){   //if array[i]>max]
+        if(array[i]>max)    //if array[i]>max]
+        {   
             max=array[i];   //max=array[i]
             maxA=i;         //maxA=i
         }
         //find the minimum value 
-        if(array[i]<min){   //if array[i]<min
+        if(array[i]<min)    //if array[i]<min
+        {   
             min=array[i];   //min=array[i]
             minB=i;         //minB=i
         }
@@ -328,13 +343,15 @@ void showArr2(float array[], int totIn){    //showArr2 for bet win loss list
 //******************************************************************************
 //***********************display the array of table*****************************
 //******************************************************************************
-void showArr3(float array[][100], int totIn){   //showArr3 for table 
+void showArr3(float array[][HI], int totIn){   //showArr3 for table 
     cout<<endl;
+    cout<<"Displaying a table of bet outcomes"<<endl;
+    int rows=4;
     for(int i=0; i<totIn; i++){ //i=0, i<totIn, i++, output "BET"
         cout<<left<<setw(21)<<setfill(' ')<<"BET";
     }
     cout<<endl;
-    for(int row=0; row<4; row++){//loop, row=0, loop while row<4. row++
+    for(int row=0; row<rows; row++){//loop, row=0, loop while row<4. row++
         for(int col=0; col<totIn; col++){   //loop, col=0, col<totIn, col++
             cout<<left<<setw(19)<<setfill(' ')<<array[row][col]<<"  ";  //output array[row][col]
         }
@@ -353,3 +370,27 @@ void showArr3(float array[][100], int totIn){   //showArr3 for table
         }
     }
 }
+//******************************************************************************
+//*******************************Sort the array*********************************
+//******************************************************************************
+void Sort(float array[], int size){
+    int srtScan, minIndx, Val;  //sorts the array from highest value to lowest value
+    for (srtScan=0; srtScan<(size-1); srtScan++){  //loop while srtscan<size-1
+        minIndx=srtScan;      //set minIndx=srtScan
+        Val=array[srtScan];   //set val=array[srtScan]
+        for(int index=srtScan+1; index<size; index++){//loop while index<size
+            if (array[index]>Val){    //if array[index]>val
+                Val=array[index];     //val=array[index]
+                minIndx=index;        //minindx=indx
+            }
+        }
+        array[minIndx]=array[srtScan];    //array[minIndx]=array[srtScan]
+        array[srtScan]=Val;               //array[srtScan]=val
+    }
+    //display results
+    cout<<endl<<endl;
+    cout<<"You winnings bets from highest to lowest were"<<endl;
+    for(int a=0; a<size; a++){ //loop, a=0, a<totIn, a++
+        cout<<array[a]<<endl;   //show array[a]]
+    }
+ }
